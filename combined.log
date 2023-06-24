@@ -1,0 +1,52 @@
+{"level":"info","message":"This is an info message","service":"user-service"}
+{"level":"error","message":"This is an info message","service":"user-service"}
+{"level":"error","message":"This is an info message","service":"user-service"}
+{"level":"error","message":"This is an info message","service":"user-service"}
+{"level":"warn","message":"This is an info message","service":"user-service"}
+{"level":"error","message":"This is an error message","service":"NFT-Dist-Service"}
+{"level":"error","message":"This is an error message","service":"NFT-Dist-Service"}
+{"level":"error","message":"This is an error message","service":"NFT-Dist-Service"}
+error: This is an error message
+error: This is an error message
+warn: This is an error message
+info: This is an error message
+info: This is an error messagehttps://young-bold-dust.matic-testnet.discover.quiknode.pro/a0b7aac49cb2c5b052bbed5a16c448c11d18a47a/
+error: Error Caught in Minting... :  Cannot read properties of null (reading 'getTransactionCount') {"stack":"TypeError: Cannot read properties of null (reading 'getTransactionCount')\n    at getNonce (/Users/nuwangunarathna/blockchain/quadrant-mint-job/mint/mint.js:83:30)\n    at mintNFT (/Users/nuwangunarathna/blockchain/quadrant-mint-job/mint/mint.js:107:25)\n    at Object.<anonymous> (/Users/nuwangunarathna/blockchain/quadrant-mint-job/tests/mint-test.js:4:1)\n    at Module._compile (node:internal/modules/cjs/loader:1103:14)\n    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1157:10)\n    at Module.load (node:internal/modules/cjs/loader:981:32)\n    at Function.Module._load (node:internal/modules/cjs/loader:822:12)\n    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)\n    at node:internal/main/run_main_module:17:47"}
+error: Error Caught in Minting... :  Cannot read properties of null (reading 'getTransactionCount') {"stack":"TypeError: Cannot read properties of null (reading 'getTransactionCount')\n    at getNonce (/Users/nuwangunarathna/blockchain/quadrant-mint-job/mint/mint.js:83:30)\n    at mintNFT (/Users/nuwangunarathna/blockchain/quadrant-mint-job/mint/mint.js:108:25)\n    at Object.<anonymous> (/Users/nuwangunarathna/blockchain/quadrant-mint-job/tests/mint-test.js:4:1)\n    at Module._compile (node:internal/modules/cjs/loader:1103:14)\n    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1157:10)\n    at Module.load (node:internal/modules/cjs/loader:981:32)\n    at Function.Module._load (node:internal/modules/cjs/loader:822:12)\n    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)\n    at node:internal/main/run_main_module:17:47"}
+error: Error Caught in Minting... :  Cannot access 'init' before initialization {"stack":"ReferenceError: Cannot access 'init' before initialization\n    at mintNFT (/Users/nuwangunarathna/blockchain/quadrant-mint-job/mint/mint.js:107:18)\n    at Object.<anonymous> (/Users/nuwangunarathna/blockchain/quadrant-mint-job/tests/mint-test.js:4:1)\n    at Module._compile (node:internal/modules/cjs/loader:1103:14)\n    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1157:10)\n    at Module.load (node:internal/modules/cjs/loader:981:32)\n    at Function.Module._load (node:internal/modules/cjs/loader:822:12)\n    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)\n    at node:internal/main/run_main_module:17:47"}
+error: Error Caught in Minting... :  Cannot read properties of null (reading 'getTransactionCount') {"stack":"TypeError: Cannot read properties of null (reading 'getTransactionCount')\n    at getNonce (/Users/nuwangunarathna/blockchain/quadrant-mint-job/mint/mint.js:83:30)\n    at mintNFT (/Users/nuwangunarathna/blockchain/quadrant-mint-job/mint/mint.js:108:25)\n    at Object.<anonymous> (/Users/nuwangunarathna/blockchain/quadrant-mint-job/tests/mint-test.js:4:1)\n    at Module._compile (node:internal/modules/cjs/loader:1103:14)\n    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1157:10)\n    at Module.load (node:internal/modules/cjs/loader:981:32)\n    at Function.Module._load (node:internal/modules/cjs/loader:822:12)\n    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)\n    at node:internal/main/run_main_module:17:47"}
+info: current nonce 165
+info: gasFee 2117025034
+info: Submitting mint transaction
+info: Mint Transaction is successful!
+error: Error Caught in Minting... :  "Transaction Hash:" is not a function {"stack":"TypeError: \"Transaction Hash:\" is not a function\n    at mintNFT (/Users/nuwangunarathna/blockchain/quadrant-mint-job/mint/mint.js:144:37)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)"}
+info: current nonce 166
+info: gasFee 1932151589
+info: Submitting mint transaction
+info: Mint Transaction is successful!
+error: Error Caught in Minting... :  Cannot read properties of null (reading 'getTransactionCount') {"stack":"TypeError: Cannot read properties of null (reading 'getTransactionCount')\n    at getNonce (/Users/nuwangunarathna/blockchain/quadrant-mint-job/mint/mint.js:92:30)\n    at mintNFT (/Users/nuwangunarathna/blockchain/quadrant-mint-job/mint/mint.js:117:25)\n    at Object.<anonymous> (/Users/nuwangunarathna/blockchain/quadrant-mint-job/tests/mint-test.js:4:1)\n    at Module._compile (node:internal/modules/cjs/loader:1103:14)\n    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1157:10)\n    at Module.load (node:internal/modules/cjs/loader:981:32)\n    at Function.Module._load (node:internal/modules/cjs/loader:822:12)\n    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)\n    at node:internal/main/run_main_module:17:47"}
+error: Error Caught in Minting... :  Cannot read properties of null (reading 'getTransactionCount') {"stack":"TypeError: Cannot read properties of null (reading 'getTransactionCount')\n    at getNonce (/Users/nuwangunarathna/blockchain/quadrant-mint-job/mint/mint.js:92:30)\n    at mintNFT (/Users/nuwangunarathna/blockchain/quadrant-mint-job/mint/mint.js:117:25)\n    at Object.<anonymous> (/Users/nuwangunarathna/blockchain/quadrant-mint-job/tests/mint-test.js:4:1)\n    at Module._compile (node:internal/modules/cjs/loader:1103:14)\n    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1157:10)\n    at Module.load (node:internal/modules/cjs/loader:981:32)\n    at Function.Module._load (node:internal/modules/cjs/loader:822:12)\n    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)\n    at node:internal/main/run_main_module:17:47"}
+info: init called
+error: Error Caught in Minting... :  Cannot read properties of null (reading 'getTransactionCount') {"stack":"TypeError: Cannot read properties of null (reading 'getTransactionCount')\n    at getNonce (/Users/nuwangunarathna/blockchain/quadrant-mint-job/mint/mint.js:92:30)\n    at mintNFT (/Users/nuwangunarathna/blockchain/quadrant-mint-job/mint/mint.js:117:25)\n    at Object.<anonymous> (/Users/nuwangunarathna/blockchain/quadrant-mint-job/tests/mint-test.js:4:1)\n    at Module._compile (node:internal/modules/cjs/loader:1103:14)\n    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1157:10)\n    at Module.load (node:internal/modules/cjs/loader:981:32)\n    at Function.Module._load (node:internal/modules/cjs/loader:822:12)\n    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)\n    at node:internal/main/run_main_module:17:47"}
+info: init called
+error: Error Caught in Minting... :  Cannot read properties of null (reading 'getTransactionCount') {"stack":"TypeError: Cannot read properties of null (reading 'getTransactionCount')\n    at getNonce (/Users/nuwangunarathna/blockchain/quadrant-mint-job/mint/mint.js:92:30)\n    at mintNFT (/Users/nuwangunarathna/blockchain/quadrant-mint-job/mint/mint.js:117:25)\n    at Object.<anonymous> (/Users/nuwangunarathna/blockchain/quadrant-mint-job/tests/mint-test.js:4:1)\n    at Module._compile (node:internal/modules/cjs/loader:1103:14)\n    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1157:10)\n    at Module.load (node:internal/modules/cjs/loader:981:32)\n    at Function.Module._load (node:internal/modules/cjs/loader:822:12)\n    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)\n    at node:internal/main/run_main_module:17:47"}
+info: init called
+error: Error Caught in Minting... :  Cannot read properties of null (reading 'getTransactionCount') {"stack":"TypeError: Cannot read properties of null (reading 'getTransactionCount')\n    at getNonce (/Users/nuwangunarathna/blockchain/quadrant-mint-job/mint/mint.js:92:30)\n    at mintNFT (/Users/nuwangunarathna/blockchain/quadrant-mint-job/mint/mint.js:117:25)\n    at Object.<anonymous> (/Users/nuwangunarathna/blockchain/quadrant-mint-job/tests/mint-test.js:4:1)\n    at Module._compile (node:internal/modules/cjs/loader:1103:14)\n    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1157:10)\n    at Module.load (node:internal/modules/cjs/loader:981:32)\n    at Function.Module._load (node:internal/modules/cjs/loader:822:12)\n    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)\n    at node:internal/main/run_main_module:17:47"}
+info: init called
+info: Submitting mint transaction
+info: Mint Transaction is successful!
+info: init called
+info: Submitting mint transaction
+info: Mint Transaction is successful!
+info: Initiablizing Quadrant NFT Minting and Distribution...
+info: Submitting mint transaction
+info: Mint Transaction is successful!
+info: Initiablizing Quadrant NFT Minting and Distribution...
+info: Submitting mint transaction
+info: Mint Transaction is successful!
+info: Initiablizing Quadrant NFT Minting and Distribution...
+info: Submitting mint transaction
+info: Mint Transaction is successful!
+info: Initiablizing Quadrant NFT Minting and Distribution...
+info: Submitting mint transaction
+info: Mint Transaction is successful!
