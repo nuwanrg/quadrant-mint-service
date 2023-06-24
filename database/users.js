@@ -1,27 +1,17 @@
 // users.js
 
 const pool = require("./db");
-
-// const getUsers = () => {
-//   return new Promise((resolve, reject) => {
-//     pool.query("SELECT * FROM quad_users", (err, res) => {
-//       if (err) {
-//         reject(err);
-//       } else {
-//         resolve(res.rows);
-//       }
-//     });
-//   });
-// };
+const fs = require("fs");
 
 async function dropUsersTable() {
   const client = await pool.connect();
   try {
+    await client.query("BEGIN");
     const queryText = `DROP TABLE IF EXISTS quad_users CASCADE`;
     const res = await client.query(queryText);
     const commit = await client.query("COMMIT");
-    return "Tabel quad_users droped successfully";
   } catch (err) {
+    await client.query("ROLLBACK");
     console.error("Error dropping table:", err);
   } finally {
     client.release();
@@ -64,24 +54,22 @@ async function createUsersTable() {
 }
 
 async function insertTestUsersData() {
+  console.log("Inserting users");
   const client = await pool.connect();
 
   try {
-    const queryText = `
-            INSERT INTO quad_users (wallet_address, reward_pool, rewarded, reward_balance)
-            VALUES ('0x0B3d07B26D2e5E1d0c2696d0E13d26BFD7344579', 1, false,0),
-                   ('0x020D13a97dE3a1BcE11956fb974A2fFE216f72A1', 2, false,0),
-                   ('0x70997970C51812dc3A010C7d01b50e0d17dc79C8', 3, false,0),
-                   ('0x164ECceAA3f69AC4fA1852549299B387D3bC0A33', 1, false,0),
-                   ('0x3b09cd199665c16530a862A88fE7F41a2e4d2586', 2, false,0),
-                   ('0x5AB7E80D46B87be813Bc0FacA13cbce5156Ff04f', 3, false,0),
-                   ('0x9876EedD18BB8aBa5aFfa21e6A14B8553A0F47cD', 1, false,0),
-                   ('0x9FCb2BebB9204851545d6F843cc664d39C7E5594', 2, false,0),
-                   ('0x5Ab14c7F5d7d97bd85d66e186d6b79941655BDa0', 3, false,0),
-                   ('0x8287Cf0b8F02d7A6248D76D281016cDdc21Db037', 1, false,0)
-                   ;
-        `;
-    await client.query(queryText);
+    // Read and parse the JSON data from the file
+    const rawData = fs.readFileSync("test-user-data.json");
+    const users = JSON.parse(rawData);
+
+    for (const user of users) {
+      const queryText = `
+        INSERT INTO quad_users (wallet_address, reward_pool, rewarded, reward_balance)
+        VALUES ('${user.wallet_address}', ${user.reward_pool}, ${user.rewarded}, ${user.reward_balance});
+      `;
+      await client.query(queryText);
+    }
+
     console.log("Test data inserted successfully.");
   } catch (err) {
     console.error("Error inserting test data:", err);
@@ -120,7 +108,7 @@ async function updateRewarded(wallet_address, rewarded) {
       "UPDATE quad_users SET rewarded = $1 WHERE wallet_address = $2",
       [rewarded, wallet_address]
     );
-    console.log(`User Updated: ${wallet_address}`);
+    //console.log(`User Updated: ${wallet_address}`);
   } catch (err) {
     console.error(err.message);
   }

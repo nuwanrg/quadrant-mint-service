@@ -1,0 +1,14 @@
+[
+  {
+    "wallet_address": "0x0B3d07B26D2e5E1d0c2696d0E13d26BFD7344579",
+    "reward_pool": 1,
+    "rewarded": false,
+    "reward_balance": 0
+  },
+  {
+    "wallet_address": "0x020D13a97dE3a1BcE11956fb974A2fFE216f72A1",
+    "reward_pool": 2,
+    "rewarded": false,
+    "reward_balance": 0
+  }
+]

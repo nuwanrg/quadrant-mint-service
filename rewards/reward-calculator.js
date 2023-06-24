@@ -13,6 +13,7 @@ async function getRewards(walletAddress) {
     if (result.rows.length > 0) {
       //Implement the logic for calculating rewards
       const rewardPool = result.rows[0].reward_pool;
+      console.log("rewardPool", rewardPool);
       let rewards = 1; //Set default 1 in case a wallet if not belong to any pool.
 
       if (rewardPool == 1) {
@@ -21,6 +22,8 @@ async function getRewards(walletAddress) {
         rewards = 20;
       } else if (rewardPool == 3) {
         rewards = 30;
+      } else if (rewardPool == 4) {
+        rewards = 40;
       }
       return rewards;
     } else {

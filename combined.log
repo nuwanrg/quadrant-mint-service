@@ -50,3 +50,167 @@ info: Mint Transaction is successful!
 info: Initiablizing Quadrant NFT Minting and Distribution...
 info: Submitting mint transaction
 info: Mint Transaction is successful!
+info: Initiablizing Quadrant NFT Minting and Distribution...
+info: Submitting mint transaction
+info: Initiablizing Quadrant NFT Minting and Distribution...
+info: Initiablizing Quadrant NFT Minting and Distribution...
+info: Submitting mint transaction
+info: Mint Transaction is successful!
+error: Error Caught in Minting... :  Cannot read properties of null (reading 'populateTransaction') {"stack":"TypeError: Cannot read properties of null (reading 'populateTransaction')\n    at mintNFT (/Users/nuwangunarathna/blockchain/quadrant-mint-job/mint/mint.js:134:41)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)"}
+error: Error Caught in Minting... :  Cannot read properties of null (reading 'populateTransaction') {"stack":"TypeError: Cannot read properties of null (reading 'populateTransaction')\n    at mintNFT (/Users/nuwangunarathna/blockchain/quadrant-mint-job/mint/mint.js:134:41)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)"}
+info: Initiablizing Quadrant NFT Minting and Distribution...
+info: Initiablizing Quadrant NFT Minting and Distribution...
+info: Submitting mint transaction
+info: Mint Transaction is successful!
+info: Initiablizing Quadrant NFT Minting and Distribution...
+info: Submitting mint transaction
+info: Mint Transaction is successful!
+error: Error Caught in Minting... :  receipt is not defined {"stack":"ReferenceError: receipt is not defined\n    at transferTokens (/Users/nuwangunarathna/blockchain/quadrant-mint-job/mint/transfer-token.js:53:22)\n    at mintNFT (/Users/nuwangunarathna/blockchain/quadrant-mint-job/mint/mint.js:177:35)\n    at async /Users/nuwangunarathna/blockchain/quadrant-mint-job/tests/mint-test.js:7:17"}
+info: Initiablizing Quadrant NFT Minting and Distribution...
+error: Error Caught in Minting... :  Cannot read properties of null (reading 'populateTransaction') {"stack":"TypeError: Cannot read properties of null (reading 'populateTransaction')\n    at mintNFT (/Users/nuwangunarathna/blockchain/quadrant-mint-job/mint/mint.js:134:41)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)\n    at async /Users/nuwangunarathna/blockchain/quadrant-mint-job/tests/mint-test.js:7:17"}
+info: Initiablizing Quadrant NFT Minting and Distribution...
+error: Error Caught in Minting... :  Cannot read properties of null (reading 'populateTransaction') {"stack":"TypeError: Cannot read properties of null (reading 'populateTransaction')\n    at mintNFT (/Users/nuwangunarathna/blockchain/quadrant-mint-job/mint/mint.js:135:41)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)"}
+error: Error Caught in Minting... :  Cannot read properties of null (reading 'populateTransaction') {"stack":"TypeError: Cannot read properties of null (reading 'populateTransaction')\n    at mintNFT (/Users/nuwangunarathna/blockchain/quadrant-mint-job/mint/mint.js:144:41)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)"}
+info: Initiablizing Quadrant NFT Minting and Distribution...
+info: Submitting mint transaction
+info: Mint Transaction is successful!
+info: Initiablizing Quadrant NFT Minting and Distribution...
+info: Submitting mint transaction
+info: Mint Transaction is successful!
+info: Initiablizing Quadrant NFT Minting and Distribution...
+info: Initiablizing Quadrant NFT Minting and Distribution...
+info: Submitting mint transaction
+info: Mint Transaction is successful!
+info: Initiablizing Quadrant NFT Minting and Distribution...
+info: Submitting mint transaction
+info: Mint Transaction is successful!
+info: Initiablizing Quadrant NFT Minting and Distribution...
+info: Submitting mint transaction
+info: Mint Transaction is successful!
+info: Initiablizing Quadrant NFT Minting and Distribution...
+info: Submitting mint transaction
+info: Mint Transaction is successful!
+info: Initiablizing Quadrant NFT Minting and Distribution...
+info: Submitting mint transaction
+info: Mint Transaction is successful!
+info: Initiablizing Quadrant NFT Minting and Distribution...
+info: Submitting mint transaction
+info: Mint Transaction is successful!
+info: Initiablizing Quadrant NFT Minting and Distribution...
+info: Submitting mint transaction
+info: Mint Transaction is successful!
+info: Initiablizing Quadrant NFT Minting and Distribution...
+info: Submitting mint transaction
+info: Mint Transaction is successful!
+info: Initiablizing Quadrant NFT Minting and Distribution...
+info: Submitting mint transaction
+info: Mint Transaction is successful!
+info: Initiablizing Quadrant NFT Minting and Distribution...
+info: Submitting mint transaction
+info: Mint Transaction is successful!
+info: Initiablizing Quadrant NFT Minting and Distribution...
+info: Submitting mint transaction
+info: Mint Transaction is successful!
+info: Initiablizing Quadrant NFT Minting and Distribution...
+info: Submitting mint transaction
+info: Mint Transaction is successful!
+info: Initiablizing Quadrant NFT Minting and Distribution...
+info: Submitting mint transaction
+info: Mint Transaction is successful!
+info: Initiablizing Quadrant NFT Minting and Distribution...
+info: Minting and Distribution for wallet : 0x0B3d07B26D2e5E1d0c2696d0E13d26BFD7344579
+info: Submitting mint transaction
+info: NFT Minted successfully! Transaction Hash:0xfd19f806fc7b2ce30e23ad686f8baa23e65cc51c94fcf98579a7fe0f33116260
+info: NFT Transfered successfully! Transaction Hash:0x39ce935ef0e8da7a50ec6842e6e81a52135091d1a2bb22e9528687251e89fb6f
+info: Tokens Transfered successfully! Transaction Hash:0x13adfd7244474a6e617b06594c311869f695b3cfdcb82b00a21a9ce6d60753fd
+info: Mint and Coint Distribution Successful for wallet : 0x0B3d07B26D2e5E1d0c2696d0E13d26BFD7344579
+info: Minting and Distribution for wallet : 0x020D13a97dE3a1BcE11956fb974A2fFE216f72A1
+info: Submitting mint transaction
+info: Initiablizing Quadrant NFT Minting and Distribution...
+info: Minting and Distribution for wallet : 0x020D13a97dE3a1BcE11956fb974A2fFE216f72A1
+info: Initiablizing Quadrant NFT Minting and Distribution...
+info: Initiablizing Quadrant NFT Minting and Distribution...
+info: Minting and Distribution for wallet : 0x020D13a97dE3a1BcE11956fb974A2fFE216f72A1
+info: Initiablizing Quadrant NFT Minting and Distribution...
+info: Preparing Database!
+error: Error in Initializing
+info: Minting and Distribution for wallet : 0x0B3d07B26D2e5E1d0c2696d0E13d26BFD7344579
+error: Error Caught in Minting... :  Cannot read properties of null (reading 'populateTransaction') {"stack":"TypeError: Cannot read properties of null (reading 'populateTransaction')\n    at mintNFT (/Users/nuwangunarathna/blockchain/quadrant-mint-job/mint/mint.js:152:41)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)"}
+info: Initiablizing Quadrant NFT Minting and Distribution...
+info: Preparing Database!
+error: Error in Initializing invalid hexlify value (argument="value", value="your_private_key_here", code=INVALID_ARGUMENT, version=bytes/5.7.0) {"argument":"value","code":"INVALID_ARGUMENT","reason":"invalid hexlify value","stack":"Error: invalid hexlify value (argument=\"value\", value=\"your_private_key_here\", code=INVALID_ARGUMENT, version=bytes/5.7.0)\n    at Logger.makeError (/Users/nuwangunarathna/blockchain/quadrant-mint-job/node_modules/@ethersproject/logger/lib/index.js:238:21)\n    at Logger.throwError (/Users/nuwangunarathna/blockchain/quadrant-mint-job/node_modules/@ethersproject/logger/lib/index.js:247:20)\n    at Logger.throwArgumentError (/Users/nuwangunarathna/blockchain/quadrant-mint-job/node_modules/@ethersproject/logger/lib/index.js:250:21)\n    at hexlify (/Users/nuwangunarathna/blockchain/quadrant-mint-job/node_modules/@ethersproject/bytes/lib/index.js:200:19)\n    at new SigningKey (/Users/nuwangunarathna/blockchain/quadrant-mint-job/node_modules/@ethersproject/signing-key/lib/index.js:20:82)\n    at new Wallet (/Users/nuwangunarathna/blockchain/quadrant-mint-job/node_modules/@ethersproject/wallet/lib/index.js:120:36)\n    at init (/Users/nuwangunarathna/blockchain/quadrant-mint-job/mint/mint.js:91:14)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)\n    at async _mintNFT (/Users/nuwangunarathna/blockchain/quadrant-mint-job/mint/mint.js:263:5)\n    at async /Users/nuwangunarathna/blockchain/quadrant-mint-job/tests/mint-test.js:8:5","value":"your_private_key_here"}
+info: Minting and Distribution for wallet : 0x0B3d07B26D2e5E1d0c2696d0E13d26BFD7344579
+info: Initiablizing Quadrant NFT Minting and Distribution...
+info: Preparing Database!
+info: Minting and Distribution for wallet : 0x0B3d07B26D2e5E1d0c2696d0E13d26BFD7344579
+info: Submitting mint transaction
+info: NFT Minted successfully! Transaction Hash:0x267a2d0bcb439bc2cd15a871236296e334730260d8fbb4798b357caac4b9ac16
+info: NFT Transfered successfully! Transaction Hash:0x35fcdda051a8d88758e717f0d59bc97e0b006d6f07b9fbb694665203bde90057
+info: Tokens Transfered successfully! Transaction Hash:0x10720a52d44d443796100dab56045367109b372c642da69b0ed82e55bc210903
+info: Mint and Coint Distribution Successful for wallet : 0x0B3d07B26D2e5E1d0c2696d0E13d26BFD7344579
+info: Initiablizing Quadrant NFT Minting and Distribution...
+info: Preparing Database!
+info: Minting and Distribution for wallet : 0x0B3d07B26D2e5E1d0c2696d0E13d26BFD7344579
+info: Submitting mint transaction
+info: NFT Minted successfully! Transaction Hash:0x733b8a962ccefe358af7dfbe254c7446f860e3180ab36dea49cc845ff41d5b1e
+info: NFT Transfered successfully! Transaction Hash:0xcf54b953b9e36e9ccceb7a284e950cf0bbbe4176be145cba3944c21b0fbf9013
+info: Tokens Transfered successfully! Transaction Hash:0xf255b995e814a3c59c16690f3ea0af241ae464ec71d057e7bf3e3a79b094dfee
+info: Mint and Coint Distribution Successful for wallet : 0x0B3d07B26D2e5E1d0c2696d0E13d26BFD7344579
+info: Initiablizing Quadrant NFT Minting and Distribution...
+info: Preparing Database!
+info: Minting and Distribution for wallet : 0x0B3d07B26D2e5E1d0c2696d0E13d26BFD7344579
+info: Submitting mint transaction
+info: NFT Minted successfully! Transaction Hash:0x0f7b97f7b377a91a66b58dd5a462e9822eae07194b964b844b606417890c677e
+info: NFT Transfered successfully! Transaction Hash:0x19794de96213d6d7f1b4fac7cbbb80388e7b3f975254ce2f142384a177272330
+info: Tokens Transfered successfully! Transaction Hash:0x6beb6756d892c63a213eed8ea868da9585f1300151a82c861ef59a8b1cba55e6
+info: Mint and Coint Distribution Successful for wallet : 0x0B3d07B26D2e5E1d0c2696d0E13d26BFD7344579
+info: Initiablizing Quadrant NFT Minting and Distribution...
+info: Preparing Database!
+info: Minting and Distribution for wallet : 0x0B3d07B26D2e5E1d0c2696d0E13d26BFD7344579
+info: Submitting mint transaction
+info: NFT Minted successfully! Transaction Hash:0x0297a4450da4b138ab72857e556b90e1c5df11a43b3d52104f9570ab23cfb38b
+info: NFT Transfered successfully! Transaction Hash:0x56af2b307f8f98a102ab8782b8ec70feaede6c5fa5d67916919c04ec03e70ad6
+info: Tokens Transfered successfully! Transaction Hash:0xb596bcb2249a07c733a7c575364980cbb5af6d885d7fd07241fe8b8cde3c3352
+info: Mint and Coint Distribution Successful for wallet : 0x0B3d07B26D2e5E1d0c2696d0E13d26BFD7344579
+info: Initiablizing Quadrant NFT Minting and Distribution...
+info: Preparing Database!
+info: Minting and Distribution for wallet : 0x0B3d07B26D2e5E1d0c2696d0E13d26BFD7344579
+info: Submitting mint transaction
+info: NFT Minted successfully! Transaction Hash:0x4f83bc87352c517434a3164e2d0b824d0db3e44977c1d60a376e8e085658460e
+info: NFT Transfered successfully! Transaction Hash:0xf277661e3745e1d42499635db418529f6cf9c18cfb3c9d00f52c5bbba57eb01d
+info: Tokens Transfered successfully! Transaction Hash:0xb083d9efb5687ee54fc060eb5f3a532701411dfaa64ec763f5f38e5cf305d480
+info: Mint and Coint Distribution Successful for wallet : 0x0B3d07B26D2e5E1d0c2696d0E13d26BFD7344579
+info: Minting and Distribution for wallet : 0x020D13a97dE3a1BcE11956fb974A2fFE216f72A1
+info: Submitting mint transaction
+info: NFT Minted successfully! Transaction Hash:0xbe1ef0aaee5418e9610130681461ef1bf8cfce7e0f1a0b6627291f25926a77fc
+info: NFT Transfered successfully! Transaction Hash:0xc56081f4eea7e3f67a38cfd881ce286daae1089f5d254b6154ee90d609a693c3
+info: Tokens Transfered successfully! Transaction Hash:0x64760fa62d5e8eba2d9736431a2852d889f2eb220a0cde431c3da41262e474a0
+info: Mint and Coint Distribution Successful for wallet : 0x020D13a97dE3a1BcE11956fb974A2fFE216f72A1
+info: Initiablizing Quadrant NFT Minting and Distribution...
+info: Preparing Database!
+info: Minting and Distribution for wallet : 0x0B3d07B26D2e5E1d0c2696d0E13d26BFD7344579
+info: Submitting mint transaction
+info: NFT Minted successfully! Transaction Hash:0x79d79469e32cb7753f370539ef42413c898033fcc10ee5f40fc1403a7049fa95
+info: NFT Transfered successfully! Transaction Hash:0xb80e8162f9377f88976d5ae2b7c9c681307e22ea4c3475ea68131e38c81236e6
+info: Tokens Transfered successfully! Transaction Hash:0xa55348691e1d1163413b10167bcd461d186d731e9b0bd85b027260b41bc4ec6e
+info: Mint and Coint Distribution Successful for wallet : 0x0B3d07B26D2e5E1d0c2696d0E13d26BFD7344579
+info: Minting and Distribution for wallet : 0x020D13a97dE3a1BcE11956fb974A2fFE216f72A1
+info: Submitting mint transaction
+info: NFT Minted successfully! Transaction Hash:0xfe8f3ca960902833b7f9d3edfeb18c2abcf756700373abeefb97aeab89a44c77
+info: NFT Transfered successfully! Transaction Hash:0x2bc64908789e7b1657873e91e865e7bdef19d803f7b158d5f0c9473c917c54ac
+info: Tokens Transfered successfully! Transaction Hash:0xc3191334a0af4b1ff5fdd5eaa76605520112a8530830b2101e1fe315e73412a2
+info: Mint and Coint Distribution Successful for wallet : 0x020D13a97dE3a1BcE11956fb974A2fFE216f72A1
+info: Initiablizing Quadrant NFT Minting and Distribution...
+info: Preparing Database!
+info: Minting and Distribution for wallet : 0x0B3d07B26D2e5E1d0c2696d0E13d26BFD7344579
+info: Submitting mint transaction
+info: NFT Minted successfully! Transaction Hash:0xe9ecf5ebe94f87608796f4fef490b060593025f52cb2ff3079689dc278efb04d
+info: NFT Transfered successfully! Transaction Hash:0x7ebd0a9f6827f4c869e5ee5d9b0822c13533208bd2a9e3252384cae859acb516
+info: Tokens Transfered successfully! Transaction Hash:0x88e0655a076ead8dcd683f49c85631dd2d538dc5f50043b0710fc7ea87afb655
+info: Mint and Coint Distribution Successful for wallet : 0x0B3d07B26D2e5E1d0c2696d0E13d26BFD7344579
+info: Minting and Distribution for wallet : 0x020D13a97dE3a1BcE11956fb974A2fFE216f72A1
+info: Submitting mint transaction
+info: NFT Minted successfully! Transaction Hash:0x7d79420eda54f10141093f96f97b02c7eca78ae4e9867b5c2b0fda22c50236b6
+info: NFT Transfered successfully! Transaction Hash:0xc8580dc8523a9b74e2b8e0e74506f75379f946669057482661104c2afdaeed6d
+info: Tokens Transfered successfully! Transaction Hash:0xf4e6970e57bb3d63781a4854420cd700f95ebf23f8a3212920db8599e85009f2
+info: Mint and Coint Distribution Successful for wallet : 0x020D13a97dE3a1BcE11956fb974A2fFE216f72A1

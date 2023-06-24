@@ -1,5 +1,20 @@
 const pool = require("./db");
 
+async function dropNftsTable() {
+  const client = await pool.connect();
+  try {
+    await client.query("BEGIN");
+    const queryText = `DROP TABLE IF EXISTS nfts CASCADE`;
+    const res = await client.query(queryText);
+    const commit = await client.query("COMMIT");
+  } catch (err) {
+    await client.query("ROLLBACK");
+    console.error("Error dropping table:", err);
+  } finally {
+    client.release();
+  }
+}
+
 async function createNftsTable() {
   const client = await pool.connect();
 
@@ -8,13 +23,13 @@ async function createNftsTable() {
             CREATE TABLE IF NOT EXISTS nfts (
                 id SERIAL PRIMARY KEY,
                 recipient_wallet VARCHAR(42) REFERENCES quad_users(wallet_address),
-                token_uri TEXT,
                 coin_reward INTEGER,
                 nft_mint_status TEXT,
-                nft_transfer_status TEXT,
-                coin_transfer_status TEXT,
+                token_uri TEXT,
                 nft_mint_hash TEXT,
+                nft_transfer_status TEXT,
                 nft_transfer_hash TEXT,
+                coin_transfer_status TEXT,
                 coin_transfer_hash TEXT,
                 nft_mint_error TEXT,
                 nft_transfer_error TEXT,
@@ -153,4 +168,5 @@ module.exports = {
   getNfts,
   insertNFTData,
   updateNFTData,
+  dropNftsTable,
 };

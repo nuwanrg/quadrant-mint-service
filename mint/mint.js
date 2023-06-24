@@ -15,6 +15,7 @@ const {
 const { getRewards } = require("../rewards/reward-calculator");
 const { getNfts, insertNFTData, updateNFTData } = require("../database/nfts");
 const { uploadJSONToPinata } = require("../ipfs/ipfs-service");
+const { prepareDB } = require("../database/db-prepare");
 
 //AWS Packages to access secrets setup in aws
 const {
@@ -47,7 +48,12 @@ let isInitialized = false;
  * @returns {string} The sum of a and b
  */
 async function getSecret(secretName) {
-  console.log("getSecret called");
+  // If running locally, return secret from .env file
+  if (process.env.NODE_ENV === "development") {
+    return JSON.stringify({
+      metamask_privateKey: process.env.METAMASK_PRIVATEKEY,
+    });
+  }
   const command = new GetSecretValueCommand({ SecretId: secretName });
   const data = await secretsManager.send(command);
   return data.SecretString;
@@ -57,17 +63,31 @@ async function getSecret(secretName) {
  * Init the program with required web3 configuration
  */
 async function init() {
+  logger.info("Initiablizing Quadrant NFT Minting and Distribution...");
   if (isInitialized) {
     console.log("Already initialized!");
     return;
   }
-
+  console.log("process.env.NODE_ENV", process.env.NODE_ENV);
+  try {
+    if (process.env.NODE_ENV === "development") {
+      console.log("process.env.in", process.env.NODE_ENV);
+      const preparedb = await prepareDB();
+    }
+  } catch (err) {
+    console.error(err);
+  }
+  //const initstatus = await init();
   try {
     //Get contract owener's ethereum wallet private key from aws secret.
     const secrets = await getSecret("metamask_privateKey");
     const secretObject = JSON.parse(secrets);
     privateKey = secretObject.metamask_privateKey;
+
+    //Create provider
     provider = new ethers.providers.JsonRpcProvider(QUICKNODE_HTTP_ENDPOINT);
+
+    //create wallet
     wallet = new ethers.Wallet(privateKey, provider);
 
     //Create NFT Contract
@@ -77,7 +97,7 @@ async function init() {
       provider
     );
   } catch (error) {
-    logger.error("Error in Initializing");
+    logger.error("Error in Initializing", error);
   }
   isInitialized = true;
 }
@@ -114,7 +134,6 @@ async function mintNFT(user_address) {
   let coin_transfer_error = "";
 
   try {
-    //const initstatus = await init();
     // const nonce = await getNonce();
     // const gasFee = await getGasPrice();
     // logger.info("current nonce " + nonce);
@@ -150,8 +169,9 @@ async function mintNFT(user_address) {
     nft_mint_status = "Success";
 
     //console.log("reciept", await signedTxn);
-    logger.info("Mint Transaction is successful!");
-    logger.debug("Transaction Hash:" + (await signedTxn).hash);
+    logger.info(
+      "NFT Minted successfully! Transaction Hash:" + (await signedTxn).hash
+    );
 
     //Retrive tokenId of the mint
     const tokenId = await contractInstance.tokenCounter();
@@ -171,6 +191,9 @@ async function mintNFT(user_address) {
     );
     nft_transfer_status = nftTransferRes[0];
     nft_transfer_hash = nftTransferRes[1];
+    logger.info(
+      "NFT Transfered successfully! Transaction Hash:" + nft_transfer_hash
+    );
 
     //Transfe coin to users wallet
     const coinTransferRes = await transferTokens(
@@ -181,6 +204,9 @@ async function mintNFT(user_address) {
     );
     coin_transfer_status = coinTransferRes[0];
     coin_transfer_hash = coinTransferRes[1];
+    logger.info(
+      "Tokens Transfered successfully! Transaction Hash:" + coin_transfer_hash
+    );
 
     // Update reward balance
     // if (coin_transfer_status == "Success") {
@@ -209,6 +235,9 @@ async function mintNFT(user_address) {
       nft_transfer_error,
       coin_transfer_error
     );
+    logger.info(
+      "Mint and Coint Distribution Successful for wallet : " + recipient_wallet
+    );
   } catch (e) {
     //in an event of error in any of mint, nft transfer and coin transfer steps , add records in to nfts table.
     insertNFTData(
@@ -231,12 +260,15 @@ async function mintNFT(user_address) {
 
 async function _mintNFT() {
   try {
+    await init();
     const users = await getUsers();
 
     for (let user of users) {
       // reset the transfer_status to false before minting the next NFT
       transfer_status = false;
-      console.log("wallet_address : ", user.wallet_address);
+      logger.info(
+        "Minting and Distribution for wallet : " + user.wallet_address
+      );
       mintNFT(user.wallet_address, "METADATA_URL");
 
       // Wait for the mintNFT function to set the transfer_status
@@ -244,8 +276,8 @@ async function _mintNFT() {
         // This delay function will "pause" execution in this loop for a certain amount of time,
         // then continue to the next iteration of the loop. It doesn't block other operations.
         //await delay(60000); // 60000 ms = 60 seconds
-        await delay(500); // delay for 500ms
-        console.log("Waiting for the transaction to be completed....");
+        await delay(1000); // delay for 500ms
+        //console.log("Waiting for the transaction to be completed....");
       }
     }
   } catch (err) {
@@ -260,14 +292,16 @@ function delay(t, v) {
   });
 }
 
-(async () => {
-  try {
-    logger.info("Initiablizing Quadrant NFT Minting and Distribution...");
-    const initstatus = await init();
-  } catch (err) {
-    console.error(err);
-  }
-})();
+// (async () => {
+//   try {
+//     if (process.env.ENVIRONENT !== "PROD") {
+//       const preparedb = await prepareDB();
+//     }
+//   } catch (err) {
+//     console.error(err);
+//   }
+//   const initstatus = await init();
+// })();
 
 module.exports = { _mintNFT, mintNFT };
 

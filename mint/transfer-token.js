@@ -40,7 +40,7 @@ async function transferTokens(contractAddress, privateKey, recipient, amount) {
 
     // Wait for the transaction to be mined
     const receipt = await tx.wait();
-    console.log("Transaction hash:", receipt.transactionHash);
+    //console.log("Transaction hash:", receipt.transactionHash);
 
     //Update token_balance of users
     const balance = await contract.balanceOf(recipient);

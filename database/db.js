@@ -4,7 +4,7 @@ require("dotenv").config(); // loads variables from .env into process.env
 
 const { Pool } = require("pg");
 
-console.log(process.env.DB_USER);
+// console.log(process.env.DB_USER);
 
 const pool = new Pool({
   user: process.env.DB_USER, // your database user
@@ -15,6 +15,7 @@ const pool = new Pool({
   ssl: {
     rejectUnauthorized: false,
   },
+  max: 20, // increase max pool size to 20
 });
 
 module.exports = pool;

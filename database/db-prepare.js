@@ -1,26 +1,30 @@
 require("dotenv").config(); // loads variables from .env into process.env
-const { createUsersTable, insertTestUsersData } = require("./users");
-const { createNftsTable } = require("./nfts");
+const logger = require("../logger");
+// const { deleteTables } = require("./clean-db");
+const {
+  createUsersTable,
+  insertTestUsersData,
+  dropUsersTable,
+} = require("./users");
+const { createNftsTable, dropNftsTable } = require("./nfts");
 
-if (process.env.PREPARE_DB) {
-  try {
-    console.log("Creating users table.");
-    createUsersTable();
-  } catch (err) {
-    console.error("Error creating table quad_users:", err);
-  } finally {
-    //client.release();
-  }
-
-  try {
-    console.log("Creating nft table.");
-    createNftsTable();
-  } catch (err) {
-    console.error("Error creating table nfts:", err);
-  } finally {
-    //client.release();
-  }
-
-  //Insert test data into quad_users table.
-  //insertTestUsersData();
+async function prepareDB() {
+  logger.info("Preparing Database!");
+  await dropUsersTable();
+  await dropNftsTable();
+  await createUsersTable();
+  await createNftsTable();
+  await insertTestUsersData();
+  // //Insert test data into quad_users table.
+  // try {
+  //   console.log("Creating nft table.");
+  //   const res = await insertTestUsersData();
+  // } catch (err) {
+  //   console.error("Error creating table nfts:", err);
+  // } finally {
+  // }
 }
+
+module.exports = {
+  prepareDB,
+};
