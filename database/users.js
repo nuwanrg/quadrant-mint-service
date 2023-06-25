@@ -95,14 +95,17 @@ async function insertTestUsersData() {
 }
 
 async function insertUserData(wallet_address, reward_pool) {
+  const client = await pool.connect();
   try {
-    const result = await pool.query(
+    const result = await client.query(
       "INSERT INTO quad_users (wallet_address, reward_pool,rewarded,reward_balance) VALUES ($1, $2, $3,$4)",
       [wallet_address, reward_pool]
     );
     console.log(`User Inserted: ${wallet_address}`);
   } catch (err) {
     console.error(err.message);
+  } finally {
+    client.release();
   }
 }
 

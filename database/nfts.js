@@ -96,24 +96,9 @@ async function insertNFTData(
   nft_transfer_error,
   coin_transfer_error
 ) {
-  // console.log(
-  //   "Inserting data in nfts table ",
-  //   recipient_wallet,
-  //   token_uri,
-  //   token_id,
-  //   coin_reward,
-  //   nft_mint_status,
-  //   nft_transfer_status,
-  //   coin_transfer_status,
-  //   nft_mint_hash,
-  //   nft_transfer_hash,
-  //   coin_transfer_hash,
-  //   nft_mint_error,
-  //   nft_transfer_error,
-  //   coin_transfer_error
-  // );
+  const client = await pool.connect();
   try {
-    const result = await pool.query(
+    const result = await client.query(
       "INSERT INTO nfts (recipient_wallet,token_uri,token_id,coin_reward,nft_mint_status,nft_transfer_status, coin_transfer_status,nft_mint_hash,nft_transfer_hash,coin_transfer_hash,nft_mint_error,nft_transfer_error,coin_transfer_error) VALUES ($1, $2, $3, $4, $5, $6, $7,$8, $9, $10, $11,$12, $13)",
       [
         recipient_wallet,
