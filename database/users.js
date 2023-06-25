@@ -112,7 +112,7 @@ async function updateUserData(wallet_address, reward_pool) {
       "UPDATE quad_users SET reward_pool = $1 WHERE wallet_address = $2",
       [reward_pool, wallet_address]
     );
-    console.log(`User Updated: ${wallet_address}`);
+    // console.log(`User Updated: ${wallet_address}`);
   } catch (err) {
     console.error(err.message);
   }
@@ -136,7 +136,7 @@ async function updateRewardBalance(wallet_address, reward_balance) {
       "UPDATE quad_users SET reward_balance = $1 WHERE wallet_address = $2",
       [reward_balance, wallet_address]
     );
-    console.log(`User Updated: ${wallet_address}`);
+    // console.log(`User Updated: ${wallet_address}`);
   } catch (err) {
     console.error(err.message);
   }
