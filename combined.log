@@ -320,3 +320,135 @@ info: NFT Minted successfully! Transaction Hash:0x0677040fc1dd12c3bef8b41eb0b50c
 info: NFT Transfered successfully! Transaction Hash:0x1fdcf4300bf5462cf1575a3bd86dfe9cff32bd96b8c79a8c459feeb64c55e830
 info: Tokens Transfered successfully! Transaction Hash:0x5c5bdebb13d7991b52278077ced8c9e08574e9632b24483557485ffd11add00a
 info: Minting and Coint Distribution Successful for wallet : 0x020D13a97dE3a1BcE11956fb974A2fFE216f72A1
+info: Preparing Database!
+info: Initiablizing Quadrant NFT Minting and Distribution...
+info: process.env.NODE_ENV
+info: Minting and Distribution for wallet : 0x0B3d07B26D2e5E1d0c2696d0E13d26BFD7344579
+info: Submitting mint transaction
+info: NFT Minted successfully! Transaction Hash:0xf5a7dddd55bb92d2f78b84b44c74d98ed43f671c7f0be4f18c7c54522c391c3e
+info: NFT Transfered successfully! Transaction Hash:0x9697f3ea560b3cbcac4764be05a04bc3eb93d79cd765b1be8cca6ba80140b56d
+info: Tokens Transfered successfully! Transaction Hash:0x0f21776e5b484db9497595ad9d7a12914c28bc4d393449a9a14a4ce14216bf53
+info: Minting and Coint Distribution Successful for wallet : 0x0B3d07B26D2e5E1d0c2696d0E13d26BFD7344579
+info: Minting and Distribution for wallet : 0x020D13a97dE3a1BcE11956fb974A2fFE216f72A1
+info: Submitting mint transaction
+info: NFT Minted successfully! Transaction Hash:0x4cf09f7d7e344a9f32fe90804ef71317c1bcb374feec02d6a17eba7cdd652678
+info: NFT Transfered successfully! Transaction Hash:0x4ad39ff7ec03d19b05ee715cdc70cab24b77430eac84a62bfba64751d437a26d
+info: Tokens Transfered successfully! Transaction Hash:0x19ecb91ca6ff56def5ed2eebdcfbe873e7d5a583b239743c8f6f9cdc388b6842
+info: Minting and Coint Distribution Successful for wallet : 0x020D13a97dE3a1BcE11956fb974A2fFE216f72A1
+info: Preparing Database!
+info: Preparing Database!
+info: Initiablizing Quadrant NFT Minting and Distribution...
+info: process.env.NODE_ENV
+info: Minting and Distribution for wallet : 0x0B3d07B26D2e5E1d0c2696d0E13d26BFD7344579
+info: Submitting mint transaction
+info: NFT Minted successfully! Transaction Hash:0xe2d4675b649feb712e2f34f2339829f5e241b21e70e5b6760ae1b416384fca89
+info: NFT Transfered successfully! Transaction Hash:0xe2e396fb9a7da1b8de86d8b781ea114d887aa3808b7f0ad9901a9a42a20ecffc
+info: Tokens Transfered successfully! Transaction Hash:0x08ecc5d56730a2ed904c43c4772ba8d2f7fd11c1c2766bdd0ec5278267339c26
+info: Minting and Coint Distribution Successful for wallet : 0x0B3d07B26D2e5E1d0c2696d0E13d26BFD7344579
+info: Minting and Distribution for wallet : 0x020D13a97dE3a1BcE11956fb974A2fFE216f72A1
+info: Submitting mint transaction
+info: NFT Minted successfully! Transaction Hash:0x0e5d7e415e90ab44da6d0b5c89cd4f754e45e1ac93b07f6843d526cd15f43031
+info: NFT Transfered successfully! Transaction Hash:0x2c7d44dcffe3557d24e3cf7e20083ad92dcd8136fbc909462cf033351a505b51
+info: Tokens Transfered successfully! Transaction Hash:0xe9a280f1d706bc13aae2c394043d2b67122f67665efee56c7cbeec79febf2a83
+info: Minting and Coint Distribution Successful for wallet : 0x020D13a97dE3a1BcE11956fb974A2fFE216f72A1
+info: Preparing Database!
+info: Initiablizing Quadrant NFT Minting and Distribution...
+info: process.env.NODE_ENV
+info: Minting and Distribution for wallet : 0x0B3d07B26D2e5E1d0c2696d0E13d26BFD7344579
+info: Submitting mint transaction
+info: NFT Minted successfully! Transaction Hash:0x980d657ea329caef385a95ef01e00febf192faac8647af6e53d5f949aafb4ccd
+info: NFT Transfered successfully! Transaction Hash:0x5104c5b652ff9020a9664d807c605b03cd2a4eedd2be595b7a78859289166666
+error: Error Caught in Minting... :  receipt is not defined {"stack":"ReferenceError: receipt is not defined\n    at transferTokens (/Users/nuwangunarathna/blockchain/quadrant-mint-job/mint/transfer-token.js:53:22)\n    at mintNFT (/Users/nuwangunarathna/blockchain/quadrant-mint-job/mint/mint.js:219:35)"}
+info: Initiablizing Quadrant NFT Minting and Distribution...
+info: process.env.NODE_ENV
+info: Minting and Distribution for wallet : 0x0B3d07B26D2e5E1d0c2696d0E13d26BFD7344579
+info: coinreward undefined
+info: Submitting mint transaction
+info: NFT Minted successfully! Transaction Hash:0x3976d19abccf452c3a6ac0e906f7a5fa4206732f45637ad64e8c5933a09a8eae
+info: NFT Transfered successfully! Transaction Hash:0xa2c4e7bd70b60d5f6b497dcffc64362d9683510f0f978691ee6b9f8831fc7b22
+error: Error Caught in Minting... :  receipt is not defined {"stack":"ReferenceError: receipt is not defined\n    at transferTokens (/Users/nuwangunarathna/blockchain/quadrant-mint-job/mint/transfer-token.js:53:22)\n    at mintNFT (/Users/nuwangunarathna/blockchain/quadrant-mint-job/mint/mint.js:220:35)"}
+info: Initiablizing Quadrant NFT Minting and Distribution...
+info: process.env.NODE_ENV
+info: Minting and Distribution for wallet : 0x0B3d07B26D2e5E1d0c2696d0E13d26BFD7344579
+info: coinreward 10
+info: Submitting mint transaction
+info: NFT Minted successfully! Transaction Hash:0x2182d7a4e5ccb7f95c7be76b13969305d0f052ee1b4ef67a5588203f54505b1a
+info: NFT Transfered successfully! Transaction Hash:0x718214166aa3480e505540b0d09cd0ca9197270da518f5118890d7ca48a794e5
+info: Tokens Transfered successfully! Transaction Hash:0x8e1f681b8f6202708ea089a3a7c5a14fa20c5241c6de0017be06d2d2c39b0c61
+info: Minting and Coint Distribution Successful for wallet : 0x0B3d07B26D2e5E1d0c2696d0E13d26BFD7344579
+info: Minting and Distribution for wallet : 0x020D13a97dE3a1BcE11956fb974A2fFE216f72A1
+info: coinreward 20
+info: Submitting mint transaction
+info: NFT Minted successfully! Transaction Hash:0xdd7c62657177cfb709674a62ded42c2e51f9e8c8abeec7a9c8ec64082f73b6c1
+info: NFT Transfered successfully! Transaction Hash:0x2f792dea8ca50bfb70cee8050344945d56362fefe8513be86e2b7ebc67abb3ea
+info: Tokens Transfered successfully! Transaction Hash:0x588643c07572b12e78360e316ed616a7490a64604dcade9eb3be9b228b47989c
+info: Minting and Coint Distribution Successful for wallet : 0x020D13a97dE3a1BcE11956fb974A2fFE216f72A1
+info: Initiablizing Quadrant NFT Minting and Distribution...
+info: process.env.NODE_ENV
+info: Minting and Distribution for wallet : 0x70997970C51812dc3A010C7d01b50e0d17dc79C8
+info: coinreward 30
+info: Submitting mint transaction
+info: NFT Minted successfully! Transaction Hash:0xccd9040baa8f38577fe3b932f285da981800d8dd4a7aaac4d6d38e1556099177
+info: NFT Transfered successfully! Transaction Hash:0x69e284dbdd762730d8709ea7d3400a81b2acd5a28f4e0cc4ad827348c49bea93
+info: Tokens Transfered successfully! Transaction Hash:0x950a5a7251710055247299ead9b3f8d5969fc9e1cb46e6d6d8ad9562d1ec347d
+info: Minting and Coin Distribution Successful for wallet : 0x70997970C51812dc3A010C7d01b50e0d17dc79C8
+
+info: Initiablizing Quadrant NFT Minting and Distribution...
+info: process.env.NODE_ENV
+info: Preparing Database!
+info: Initiablizing Quadrant NFT Minting and Distribution...
+info: process.env.NODE_ENV
+info: Minting and Distribution for wallet : 0x0B3d07B26D2e5E1d0c2696d0E13d26BFD7344579
+info: coinreward 10
+info: Submitting mint transaction
+info: NFT Minted successfully! Transaction Hash:0x457cb69ebf1a48d11f2ae418d5f2de8a0f1d9d258f207a16a7557e1542b1c4a9
+info: NFT Transfered successfully! Transaction Hash:0xd8c3dce4e429ac01ec6b29ce0169cbbc9a3238d23a6f4a2260b803926d02f241
+info: Tokens Transfered successfully! Transaction Hash:0x7e30259301bd3b9796e0f0e2f667ec550566a624a8272546eed03dd9d97c1230
+info: Minting and Coin Distribution Successful for wallet : 0x0B3d07B26D2e5E1d0c2696d0E13d26BFD7344579
+
+info: Minting and Distribution for wallet : 0x020D13a97dE3a1BcE11956fb974A2fFE216f72A1
+info: coinreward 20
+info: Submitting mint transaction
+info: NFT Minted successfully! Transaction Hash:0x57486e4ef93e703bc5559063247b3695ea093bbc92b1d2c8ba7736183f08b20f
+info: NFT Transfered successfully! Transaction Hash:0x8d5b6c3c1b01ef112b0a19fc5df86336cf5351c4f4eb34e408084b44930941d9
+info: Tokens Transfered successfully! Transaction Hash:0xc571de007544037aa17674cf04855bf8b33a3982fc34a31afcbfed3005a24b9e
+info: Minting and Coin Distribution Successful for wallet : 0x020D13a97dE3a1BcE11956fb974A2fFE216f72A1
+
+info: Preparing Database!
+info: Initiablizing Quadrant NFT Minting and Distribution...
+info: process.env.NODE_ENV
+info: Users batch size : 2
+info: Minting and Distribution for wallet : 0x0B3d07B26D2e5E1d0c2696d0E13d26BFD7344579
+info: coinreward 10
+info: Submitting mint transaction
+info: NFT Minted successfully! Transaction Hash:0x2becd47ec57f2b2883f31aeb9a70c6bfc9b7cbee760921301858bf28f2ad9cd6
+info: NFT Transfered successfully! Transaction Hash:0xdb40536d2df851a148a0c29500581a0d68d43bc1cd157649de072e91691de038
+info: Tokens Transfered successfully! Transaction Hash:0x07221e1732c563dd3d09d6fbbe697610032ed8e2164ffaa171f85a6a1759e202
+info: Minting and Coin Distribution Successful for wallet : 0x0B3d07B26D2e5E1d0c2696d0E13d26BFD7344579
+
+info: Minting and Distribution for wallet : 0x020D13a97dE3a1BcE11956fb974A2fFE216f72A1
+info: coinreward 20
+info: Submitting mint transaction
+info: NFT Minted successfully! Transaction Hash:0xebf740ce6f5db07ceca897fab580cc35c8fa687f59d8c17f6ec3f36212acfc98
+info: NFT Transfered successfully! Transaction Hash:0xa95dcb1f066bd435e6aefa147150698fa2b69b8b26425b702e22586d56158c21
+info: Tokens Transfered successfully! Transaction Hash:0x924b8fc139e9f40bb7bc2384df460bc66bc96e0d8f135d7b0157f4935499da6f
+info: Minting and Coin Distribution Successful for wallet : 0x020D13a97dE3a1BcE11956fb974A2fFE216f72A1
+
+info: Initiablizing Quadrant NFT Minting and Distribution...
+info: process.env.NODE_ENV
+info: Users batch size : 1
+info: Minting and Distribution for wallet : 0x70997970C51812dc3A010C7d01b50e0d17dc79C8
+info: coinreward 30
+info: Submitting mint transaction
+info: NFT Minted successfully! Transaction Hash:0x6c11fca1541d68cb858259c7ac91dd7f6c37577619747feef06c49cc723d6287
+info: NFT Transfered successfully! Transaction Hash:0x14a6a1b7ad543dcd11cedb703d5e000041f944be6ea3c7debd07e507e32fd3bc
+info: Tokens Transfered successfully! Transaction Hash:0xfdf2965ca2db14ffa2ae9d793d59d786b8685de6e840b2c799f2313029efb6bc
+info: Minting and Coin Distribution Successful for wallet : 0x70997970C51812dc3A010C7d01b50e0d17dc79C8
+
+info: Preparing Database!
+info: Preparing Database!
+info: Preparing Database!
+info: Preparing Database!
+info: Preparing Database!
+info: Preparing Database!
+info: Preparing Database!

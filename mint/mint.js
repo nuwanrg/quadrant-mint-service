@@ -64,7 +64,7 @@ async function init() {
   logger.info("process.env.NODE_ENV", process.env.NODE_ENV);
   try {
     if (process.env.NODE_ENV === "development") {
-      const preparedb = await prepareDB();
+      // const preparedb = await prepareDB();
     }
   } catch (err) {
     console.error(err);
@@ -110,6 +110,7 @@ async function _mintNFT() {
   try {
     await init();
     const users = await getUsersByRewarded();
+    logger.info("Users batch size : " + users.length);
 
     for (let user of users) {
       // reset the transfer_status to false before minting the next NFT
@@ -117,7 +118,7 @@ async function _mintNFT() {
       logger.info(
         "Minting and Distribution for wallet : " + user.wallet_address
       );
-      mintNFT(user.wallet_address, "METADATA_URL");
+      await mintNFT(user.wallet_address, "METADATA_URL");
 
       // Wait for the mintNFT function to set the transfer_status
       while (!transfer_status) {
@@ -160,6 +161,7 @@ async function mintNFT(user_address) {
 
     //Get the coin amout associated with NFT to be rewared.
     const reward = await getRewards(user_address);
+    logger.info("coinreward " + reward);
 
     //Get token uri. Coin reward associated with NFT are stored in NFT metadata in token uri.
     const tokenURI = await uploadJSONToPinata(reward);
@@ -241,7 +243,7 @@ async function mintNFT(user_address) {
     }
 
     //Insert data into nfts table
-    insertNFTData(
+    await insertNFTData(
       recipient_wallet,
       token_uri,
       token_id,
@@ -257,12 +259,13 @@ async function mintNFT(user_address) {
       coin_transfer_error
     );
     logger.info(
-      "Minting and Coint Distribution Successful for wallet : " +
-        recipient_wallet
+      "Minting and Coin Distribution Successful for wallet : " +
+        recipient_wallet +
+        "\n"
     );
   } catch (e) {
     //in an event of error in any of mint, nft transfer and coin transfer steps , add records in to nfts table.
-    insertNFTData(
+    await insertNFTData(
       recipient_wallet,
       token_uri,
       token_id,

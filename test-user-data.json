@@ -16,5 +16,47 @@
     "reward_pool": 3,
     "rewarded": false,
     "reward_balance": 0
+  },
+  {
+    "wallet_address": "0x164ECceAA3f69AC4fA1852549299B387D3bC0A33",
+    "reward_pool": 1,
+    "rewarded": false,
+    "reward_balance": 0
+  },
+  {
+    "wallet_address": "0x3b09cd199665c16530a862A88fE7F41a2e4d2586",
+    "reward_pool": 2,
+    "rewarded": false,
+    "reward_balance": 0
+  },
+  {
+    "wallet_address": "0x5AB7E80D46B87be813Bc0FacA13cbce5156Ff04f",
+    "reward_pool": 3,
+    "rewarded": false,
+    "reward_balance": 0
+  },
+  {
+    "wallet_address": "0x9876EedD18BB8aBa5aFfa21e6A14B8553A0F47cD",
+    "reward_pool": 1,
+    "rewarded": false,
+    "reward_balance": 0
+  },
+  {
+    "wallet_address": "0x9FCb2BebB9204851545d6F843cc664d39C7E5594",
+    "reward_pool": 2,
+    "rewarded": false,
+    "reward_balance": 0
+  },
+  {
+    "wallet_address": "0x5Ab14c7F5d7d97bd85d66e186d6b79941655BDa0",
+    "reward_pool": 3,
+    "rewarded": false,
+    "reward_balance": 0
+  },
+  {
+    "wallet_address": "0x8287Cf0b8F02d7A6248D76D281016cDdc21Db037",
+    "reward_pool": 1,
+    "rewarded": false,
+    "reward_balance": 0
   }
 ]

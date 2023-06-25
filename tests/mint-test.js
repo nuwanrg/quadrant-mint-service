@@ -1,7 +1,5 @@
 const { _mintNFT, mintNFT } = require("../mint/mint");
 
-//test single mint
-
 (async () => {
   try {
     //const res = await mintNFT("0x092343BfdEFf5D006b13F459D3a5f7f0c1a93E29");
@@ -10,6 +8,3 @@ const { _mintNFT, mintNFT } = require("../mint/mint");
     console.error(err);
   }
 })();
-
-//mint batch
-//

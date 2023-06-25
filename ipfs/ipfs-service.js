@@ -2,7 +2,6 @@ const axios = require("axios");
 const FormData = require("form-data");
 
 async function uploadJSONToPinata(coinreward) {
-  console.log("coinreward", coinreward);
   // convert JSON object to JSON string and then to Buffer
   let jsonData = await getJsonMetadata(coinreward);
   const jsonBuffer = Buffer.from(JSON.stringify(jsonData));
