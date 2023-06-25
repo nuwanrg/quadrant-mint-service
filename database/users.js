@@ -1,5 +1,5 @@
 // users.js
-
+require("dotenv").config();
 const pool = require("./db");
 const fs = require("fs");
 
@@ -22,7 +22,22 @@ async function getUsers() {
   const client = await pool.connect();
 
   try {
-    const queryText = `SELECT * FROM quad_users`;
+    const queryText = `SELECT * FROM quad_users ORDER BY id ASC`;
+    const res = await client.query(queryText);
+    //console.log("Data retrieved successfully: ", res.rows);
+    return res.rows;
+  } catch (err) {
+    console.error("Error retrieving data:", err);
+  } finally {
+    client.release();
+  }
+}
+
+async function getUsersByRewarded() {
+  const client = await pool.connect();
+  const limit = parseInt(process.env.USER_BATCH_SIZE, 10);
+  try {
+    const queryText = `SELECT * FROM quad_users WHERE rewarded = false ORDER BY id ASC LIMIT ${limit};`;
     const res = await client.query(queryText);
     //console.log("Data retrieved successfully: ", res.rows);
     return res.rows;
@@ -38,6 +53,7 @@ async function createUsersTable() {
   try {
     const queryText = `
             CREATE TABLE IF NOT EXISTS quad_users (
+                id SERIAL,
                 wallet_address CHAR(42) PRIMARY KEY,
                 reward_pool INTEGER NOT NULL,
                 rewarded BOOLEAN,
@@ -155,4 +171,5 @@ module.exports = {
   updateRewarded,
   updateRewardBalance,
   dropUsersTable,
+  getUsersByRewarded,
 };

@@ -23,14 +23,15 @@ async function createNftsTable() {
             CREATE TABLE IF NOT EXISTS nfts (
                 id SERIAL PRIMARY KEY,
                 recipient_wallet VARCHAR(42) REFERENCES quad_users(wallet_address),
-                coin_reward INTEGER,
-                nft_mint_status TEXT,
-                token_uri TEXT,
-                nft_mint_hash TEXT,
-                nft_transfer_status TEXT,
-                nft_transfer_hash TEXT,
-                coin_transfer_status TEXT,
-                coin_transfer_hash TEXT,
+                coin_reward DECIMAL(28,18),
+                nft_mint_status VARCHAR(255),
+                token_uri VARCHAR(255),
+                token_id VARCHAR(255),
+                nft_mint_hash VARCHAR(255),
+                nft_transfer_status VARCHAR(255),
+                nft_transfer_hash VARCHAR(255),
+                coin_transfer_status VARCHAR(255),
+                coin_transfer_hash VARCHAR(255),
                 nft_mint_error TEXT,
                 nft_transfer_error TEXT,
                 coin_transfer_error TEXT
@@ -83,6 +84,7 @@ async function insertNftsTestData() {
 async function insertNFTData(
   recipient_wallet,
   token_uri,
+  token_id,
   coin_reward,
   nft_mint_status,
   nft_transfer_status,
@@ -96,10 +98,11 @@ async function insertNFTData(
 ) {
   try {
     const result = await pool.query(
-      "INSERT INTO nfts (recipient_wallet,token_uri,coin_reward,nft_mint_status,nft_transfer_status, coin_transfer_status,nft_mint_hash,nft_transfer_hash,coin_transfer_hash,nft_mint_error,nft_transfer_error,coin_transfer_error) VALUES ($1, $2, $3, $4, $5, $6, $7,$8, $9, $10, $11,$12)",
+      "INSERT INTO nfts (recipient_wallet,token_uri,token_id,coin_reward,nft_mint_status,nft_transfer_status, coin_transfer_status,nft_mint_hash,nft_transfer_hash,coin_transfer_hash,nft_mint_error,nft_transfer_error,coin_transfer_error) VALUES ($1, $2, $3, $4, $5, $6, $7,$8, $9, $10, $11,$12, $13)",
       [
         recipient_wallet,
         token_uri,
+        token_id,
         coin_reward,
         nft_mint_status,
         nft_transfer_status,

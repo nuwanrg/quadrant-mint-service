@@ -4,25 +4,11 @@ const { ethers, Signer } = require("ethers");
 const fs = require("fs");
 const transferNFT = require("./transfer-nft");
 const transferTokens = require("../mint/transfer-token");
-const {
-  insertUserData,
-  updateUserData,
-  getUsers,
-  getRewardPool,
-  updateRewarded,
-  updateRewardBalance,
-} = require("../database/users");
+const { updateRewarded, getUsersByRewarded } = require("../database/users");
 const { getRewards } = require("../rewards/reward-calculator");
-const { getNfts, insertNFTData, updateNFTData } = require("../database/nfts");
+const { insertNFTData } = require("../database/nfts");
 const { uploadJSONToPinata } = require("../ipfs/ipfs-service");
 const { prepareDB } = require("../database/db-prepare");
-
-//AWS Packages to access secrets setup in aws
-const {
-  SecretsManagerClient,
-  GetSecretValueCommand,
-} = require("@aws-sdk/client-secrets-manager");
-const secretsManager = new SecretsManagerClient({ region: "us-east-1" });
 
 let privateKey = null;
 let wallet = null;
@@ -40,6 +26,13 @@ let coint_transfer_status = false;
 
 //Flat to make sure the file is not initiablized multiple times
 let isInitialized = false;
+
+//AWS Packages to access secrets setup in aws
+const {
+  SecretsManagerClient,
+  GetSecretValueCommand,
+} = require("@aws-sdk/client-secrets-manager");
+const secretsManager = new SecretsManagerClient({ region: "us-east-1" });
 
 /**
  * Calculates and returns the sum of two numbers.
@@ -68,10 +61,9 @@ async function init() {
     console.log("Already initialized!");
     return;
   }
-  console.log("process.env.NODE_ENV", process.env.NODE_ENV);
+  logger.info("process.env.NODE_ENV", process.env.NODE_ENV);
   try {
     if (process.env.NODE_ENV === "development") {
-      console.log("process.env.in", process.env.NODE_ENV);
       const preparedb = await prepareDB();
     }
   } catch (err) {
@@ -114,6 +106,34 @@ async function getNonce() {
   return nonce;
 }
 
+async function _mintNFT() {
+  try {
+    await init();
+    const users = await getUsersByRewarded();
+
+    for (let user of users) {
+      // reset the transfer_status to false before minting the next NFT
+      transfer_status = false;
+      logger.info(
+        "Minting and Distribution for wallet : " + user.wallet_address
+      );
+      mintNFT(user.wallet_address, "METADATA_URL");
+
+      // Wait for the mintNFT function to set the transfer_status
+      while (!transfer_status) {
+        // This delay function will "pause" execution in this loop for a certain amount of time,
+        // then continue to the next iteration of the loop. It doesn't block other operations.
+        //await delay(60000); // 60000 ms = 60 seconds
+        await delay(500); // delay for 500ms
+        //console.log("Waiting for the transaction to be completed....");
+      }
+    }
+  } catch (err) {
+    console.error("Failed to fetch users:", err);
+  }
+  //mintNFT("0x16a1842b8ca64EaD5ff24F21aFd54EAe04974eF5", "METADATA_URL");
+}
+
 /**
  * Mint a NFT and Distribute send it to the given wallet address along with associated coins(Tokens).
  * @param {string} user_address - The wallet address of the user that the NFT and Coins are to be sent.
@@ -122,6 +142,7 @@ async function mintNFT(user_address) {
   //Columsn in nfts table that data will be inserted and updated during minting and distribution process
   let recipient_wallet = user_address;
   let token_uri = "";
+  let token_id = "";
   let coin_reward = "";
   let nft_mint_status = "";
   let nft_transfer_status = "";
@@ -136,8 +157,6 @@ async function mintNFT(user_address) {
   try {
     // const nonce = await getNonce();
     // const gasFee = await getGasPrice();
-    // logger.info("current nonce " + nonce);
-    // logger.info("gasFee " + gasFee);
 
     //Get the coin amout associated with NFT to be rewared.
     const reward = await getRewards(user_address);
@@ -178,6 +197,7 @@ async function mintNFT(user_address) {
     // Replace with your actual BigNumber
     //let tokenIdBigNumber = tokenId;
     let tokenIdNumber = tokenId.toNumber() - 1; // Converts to JavaScript number - be careful with large values
+    token_id = tokenIdNumber;
 
     logger.debug("tokenId", tokenIdNumber);
 
@@ -224,6 +244,7 @@ async function mintNFT(user_address) {
     insertNFTData(
       recipient_wallet,
       token_uri,
+      token_id,
       coin_reward,
       nft_mint_status,
       nft_transfer_status,
@@ -236,13 +257,15 @@ async function mintNFT(user_address) {
       coin_transfer_error
     );
     logger.info(
-      "Mint and Coint Distribution Successful for wallet : " + recipient_wallet
+      "Minting and Coint Distribution Successful for wallet : " +
+        recipient_wallet
     );
   } catch (e) {
     //in an event of error in any of mint, nft transfer and coin transfer steps , add records in to nfts table.
     insertNFTData(
       recipient_wallet,
       token_uri,
+      token_id,
       coin_reward,
       nft_mint_status,
       nft_transfer_status,
@@ -256,34 +279,6 @@ async function mintNFT(user_address) {
     );
     logger.error("Error Caught in Minting... : ", e);
   }
-}
-
-async function _mintNFT() {
-  try {
-    await init();
-    const users = await getUsers();
-
-    for (let user of users) {
-      // reset the transfer_status to false before minting the next NFT
-      transfer_status = false;
-      logger.info(
-        "Minting and Distribution for wallet : " + user.wallet_address
-      );
-      mintNFT(user.wallet_address, "METADATA_URL");
-
-      // Wait for the mintNFT function to set the transfer_status
-      while (!transfer_status) {
-        // This delay function will "pause" execution in this loop for a certain amount of time,
-        // then continue to the next iteration of the loop. It doesn't block other operations.
-        //await delay(60000); // 60000 ms = 60 seconds
-        await delay(1000); // delay for 500ms
-        //console.log("Waiting for the transaction to be completed....");
-      }
-    }
-  } catch (err) {
-    console.error("Failed to fetch users:", err);
-  }
-  //mintNFT("0x16a1842b8ca64EaD5ff24F21aFd54EAe04974eF5", "METADATA_URL");
 }
 
 function delay(t, v) {

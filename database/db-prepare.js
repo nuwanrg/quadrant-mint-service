@@ -1,6 +1,5 @@
 require("dotenv").config(); // loads variables from .env into process.env
 const logger = require("../logger");
-// const { deleteTables } = require("./clean-db");
 const {
   createUsersTable,
   insertTestUsersData,
@@ -8,6 +7,9 @@ const {
 } = require("./users");
 const { createNftsTable, dropNftsTable } = require("./nfts");
 
+/*
+ *Drop and created tables. This function should not be used in a production env.
+ */
 async function prepareDB() {
   logger.info("Preparing Database!");
   await dropUsersTable();
@@ -15,14 +17,6 @@ async function prepareDB() {
   await createUsersTable();
   await createNftsTable();
   await insertTestUsersData();
-  // //Insert test data into quad_users table.
-  // try {
-  //   console.log("Creating nft table.");
-  //   const res = await insertTestUsersData();
-  // } catch (err) {
-  //   console.error("Error creating table nfts:", err);
-  // } finally {
-  // }
 }
 
 module.exports = {

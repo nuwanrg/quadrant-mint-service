@@ -10,5 +10,11 @@
     "reward_pool": 2,
     "rewarded": false,
     "reward_balance": 0
+  },
+  {
+    "wallet_address": "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
+    "reward_pool": 3,
+    "rewarded": false,
+    "reward_balance": 0
   }
 ]
