@@ -15,7 +15,7 @@ const pool = new Pool({
   ssl: {
     rejectUnauthorized: false,
   },
-  max: 20, // increase max pool size to 20
+  max: process.env.DB_POOL_SIZE, // increase max pool size to 20
 });
 
 module.exports = pool;
