@@ -132,111 +132,81 @@ async function _mintNFT() {
   } catch (err) {
     console.error("Failed to fetch users:", err);
   }
-  //mintNFT("0x16a1842b8ca64EaD5ff24F21aFd54EAe04974eF5", "METADATA_URL");
 }
 
 /**
- * Mint a NFT and Distribute send it to the given wallet address along with associated coins(Tokens).
- * @param {string} user_address - The wallet address of the user that the NFT and Coins are to be sent.
+ * This function is responsible for minting an NFT to a user,
+ * transferring the minted NFT, transferring token rewards,
+ * and managing the data associated with these transactions.
+ *
+ * @param {string} user_address - the address of the recipient user
+ * @return {void}
  */
 async function mintNFT(user_address) {
-  //Columsn in nfts table that data will be inserted and updated during minting and distribution process
   let recipient_wallet = user_address;
-  let token_uri = "";
-  let token_id = "";
-  let coin_reward = "";
-  let nft_mint_status = "";
-  let nft_transfer_status = "";
-  let coin_transfer_status = "";
-  let nft_mint_hash = "";
-  let nft_transfer_hash = "";
-  let coin_transfer_hash = "";
-  let nft_mint_error = "";
-  let nft_transfer_error = "";
-  let coin_transfer_error = "";
+  let token_uri,
+    token_id,
+    coin_reward,
+    nft_mint_status,
+    nft_transfer_status,
+    coin_transfer_status;
+  let nft_mint_hash, nft_transfer_hash, coin_transfer_hash;
 
   try {
-    // const nonce = await getNonce();
-    // const gasFee = await getGasPrice();
-
-    //Get the coin amout associated with NFT to be rewared.
     coin_reward = await getRewards(user_address);
-    logger.info("coinreward " + coin_reward);
+    logger.info(`coinreward ${coin_reward}`);
 
-    //Get token uri. Coin reward associated with NFT are stored in NFT metadata in token uri.
     token_uri = await uploadJSONToPinata(coin_reward);
-    logger.debug("token_uri: " + token_uri);
+    logger.debug(`token_uri: ${token_uri}`);
 
-    //Populate mint transaction. Not required to pass nonce as the program wait until the current mint and distribution is finished.
-    //In case current approach is not scalable and distribution transation keep hanging too long, the minting process can keep loop by current nonce.
-    //But for the current desing its not required to pass the nonce.
-    let rawTxn = await contractInstance.populateTransaction.mint(
-      token_uri /*, {
-      gasPrice: gasFee,
-      nonce: nonce,
-    }*/
-    );
+    const rawTxn = await contractInstance.populateTransaction.mint(token_uri);
 
     logger.info("Submitting mint transaction");
-    let signedTxn = await wallet.sendTransaction(rawTxn);
-    //get tnx hash of mint
-    let mintReceipt = await signedTxn.wait();
-    nft_mint_hash = mintReceipt.hash;
+    const signedTxn = await wallet.sendTransaction(rawTxn);
+    nft_mint_hash = signedTxn.hash;
+
+    const mintReceipt = await signedTxn.wait();
     nft_mint_status = mintReceipt.status ? "Success" : "Failed";
 
-    logger.debug("signedTxn: " + JSON.stringify(signedTxn, null, 2));
-    logger.debug("mintReceipt: " + JSON.stringify(mintReceipt, null, 2));
-    logger.debug("NFT Mint Tnx Status: " + nft_mint_status);
-    //console.log("reciept", await signedTxn);
-    logger.info("NFT Minted successfully! Transaction Hash:" + nft_mint_hash);
+    logger.debug(`signedTxn: ${JSON.stringify(signedTxn, null, 2)}`);
+    logger.debug(`mintReceipt: ${JSON.stringify(mintReceipt, null, 2)}`);
+    logger.debug(`NFT Mint Tnx Status: ${nft_mint_status}`);
+    logger.info(`NFT Minted successfully! Transaction Hash: ${nft_mint_hash}`);
 
-    //Retrive token_id of the mint
     token_id = await contractInstance.tokenCounter();
-    // Replace with your actual BigNumber
-    //let tokenIdBigNumber = tokenId;
-    token_id = token_id.toNumber() - 1; // Converts to JavaScript number - be careful with large values
-    // token_id = tokenIdNumber;
+    token_id = token_id.toNumber() - 1;
 
-    logger.debug("token_id: " + token_id);
+    logger.debug(`token_id: ${token_id}`);
 
-    //Tranfer the NFT to user's wallet
-    const [nft_transfer_status, nft_transfer_hash] = await transferNFT(
+    [nft_transfer_status, nft_transfer_hash] = await transferNFT(
       privateKey,
       contractAddress,
       token_id,
       user_address,
       QUICKNODE_HTTP_ENDPOINT
     );
-
     logger.info(
-      "NFT Transfered successfully! Transaction Hash:" + nft_transfer_hash
+      `NFT Transfered successfully! Transaction Hash: ${nft_transfer_hash}`
     );
 
-    //Transfe coin to users wallet
-    const [coin_transfer_status, coin_transfer_hash] = await transferTokens(
+    [coin_transfer_status, coin_transfer_hash] = await transferTokens(
       tokenContractAddress,
       privateKey,
       user_address,
       coin_reward
     );
-
     logger.info(
-      "Tokens Transfered successfully! Transaction Hash:" + coin_transfer_hash
+      `Tokens Transfered successfully! Transaction Hash: ${coin_transfer_hash}`
     );
 
-    // Update reward balance
-    // if (coin_transfer_status == "Success") {
-    // updateRewardBalance(recipient_wallet, true);
-
-    //if both nft and coin transfer is successfull update the user as rewarded.
-    if (coin_transfer_status == "Success" && nft_transfer_status == "Success") {
+    if (
+      coin_transfer_status === "Success" &&
+      nft_transfer_status === "Success"
+    ) {
       updateRewarded(recipient_wallet, true);
-
-      //This flag is used in the main user iteration. True means program goes to next distribution cycle.
       transfer_status = true;
     }
 
-    //Insert data into nfts table
     await insertNFTData(
       recipient_wallet,
       token_uri,
@@ -247,18 +217,14 @@ async function mintNFT(user_address) {
       coin_transfer_status,
       nft_mint_hash,
       nft_transfer_hash,
-      coin_transfer_hash,
-      nft_mint_error,
-      nft_transfer_error,
-      coin_transfer_error
+      coin_transfer_hash
     );
     logger.info(
-      "Minting and Coin Distribution Successful for wallet : " +
-        recipient_wallet +
-        "\n"
+      `Minting and Coin Distribution Successful for wallet: ${recipient_wallet}`
     );
   } catch (e) {
-    //in an event of error in any of mint, nft transfer and coin transfer steps , add records in to nfts table.
+    logger.error(`Error Caught in Minting: ${e}`);
+    // insert error data
     await insertNFTData(
       recipient_wallet,
       token_uri,
@@ -270,11 +236,8 @@ async function mintNFT(user_address) {
       nft_mint_hash,
       nft_transfer_hash,
       coin_transfer_hash,
-      nft_mint_error,
-      nft_transfer_error,
-      coin_transfer_error
+      e.toString()
     );
-    logger.error("Error Caught in Minting... : ", e);
   }
 }
 
