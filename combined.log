@@ -616,3 +616,795 @@ info: NFT Transfered successfully! Transaction Hash:0x6752d53cdbf26dc34eb977443c
 info: Tokens Transfered successfully! Transaction Hash:0xa57e4e14d4bf567e8a0375cae636f5618ed08023576cc3c0baab4e199e19bc69
 info: Minting and Coin Distribution Successful for wallet : 0x020D13a97dE3a1BcE11956fb974A2fFE216f72A1
 
+info: Initiablizing Quadrant NFT Minting and Distribution...
+info: process.env.NODE_ENV
+info: Users batch size : 3
+info: Minting and Distribution for wallet : 0x70997970C51812dc3A010C7d01b50e0d17dc79C8
+info: coinreward 30
+info: Submitting mint transaction
+info: NFT Minted successfully! Transaction Hash:0xf95e029904580c74f16462a296c5b5bb1444a2916cb100603667f4d4c7e4867c
+info: NFT Transfered successfully! Transaction Hash:0xa716f41ccaf60aaca0e5ee1440030dcfa4ef9dc8d9c39d5b8418bd64a9fe5b08
+info: Tokens Transfered successfully! Transaction Hash:0xd961ce56d3407eca1fd42d0b5020b58d469e4ac65dae420aa71a67a173deec8e
+info: Minting and Coin Distribution Successful for wallet : 0x70997970C51812dc3A010C7d01b50e0d17dc79C8
+
+info: Minting and Distribution for wallet : 0x164ECceAA3f69AC4fA1852549299B387D3bC0A33
+info: coinreward 10
+info: Submitting mint transaction
+info: NFT Minted successfully! Transaction Hash:0x6b41de26d1c4ab4dde3e3946f920e6f908738e736624dd59e2a662ac794b7f2d
+info: NFT Transfered successfully! Transaction Hash:0x2fe49d18fcc9f94a966a4c94e79d2d52f3fea9a9a2aaedd73c7aff5412864557
+info: Tokens Transfered successfully! Transaction Hash:0x9bc3d6aa641185e04205b1b709a6a60832053c89140bea92c1de48f34aeca22b
+info: Minting and Coin Distribution Successful for wallet : 0x164ECceAA3f69AC4fA1852549299B387D3bC0A33
+
+info: Minting and Distribution for wallet : 0x3b09cd199665c16530a862A88fE7F41a2e4d2586
+info: coinreward 20
+info: Submitting mint transaction
+info: NFT Minted successfully! Transaction Hash:0x10d53dc98f42b850dbcda6cebbddcbf67dcb059123207bdcb14537799008e5c1
+info: NFT Transfered successfully! Transaction Hash:0xe51d0332944fd34cf191f4392eadebaae19b1f3cdf5256aa9fcfa1ca20a809ca
+info: Tokens Transfered successfully! Transaction Hash:0x3dd92d6b59fcf8051424ea3ebbda8e96a24d3997616cce4094e29f35be3773fe
+info: Minting and Coin Distribution Successful for wallet : 0x3b09cd199665c16530a862A88fE7F41a2e4d2586
+
+info: Initiablizing Quadrant NFT Minting and Distribution...
+info: process.env.NODE_ENV
+info: Users batch size : 1
+info: Minting and Distribution for wallet : 0x5AB7E80D46B87be813Bc0FacA13cbce5156Ff04f
+info: coinreward 30
+debug: tokenURI: https://gateway.pinata.cloud/ipfs/QmUer76hzHehNmGBdXA1D8ax1mNwn426WwgvaJyfCpNQZc
+info: Submitting mint transaction
+debug: mint receipt: [object Promise]
+info: NFT Minted successfully! Transaction Hash:0x56aedf7b7f9ccbd4b42df582d10daeec4d15e6a4cb5072a1d79de4df2ac26357
+debug: tokenId
+error: Error Caught in Minting... :  tx is not defined {"stack":"ReferenceError: tx is not defined\n    at transferNFT (/Users/nuwangunarathna/blockchain/quadrant-mint-job/mint/transfer-nft.js:43:22)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)\n    at async mintNFT (/Users/nuwangunarathna/blockchain/quadrant-mint-job/mint/mint.js:208:28)\n    at async _mintNFT (/Users/nuwangunarathna/blockchain/quadrant-mint-job/mint/mint.js:121:7)\n    at async /Users/nuwangunarathna/blockchain/quadrant-mint-job/tests/mint-test.js:6:5"}
+info: Initiablizing Quadrant NFT Minting and Distribution...
+info: process.env.NODE_ENV
+info: Users batch size : 1
+info: Minting and Distribution for wallet : 0x5AB7E80D46B87be813Bc0FacA13cbce5156Ff04f
+info: coinreward 30
+debug: tokenURI: https://gateway.pinata.cloud/ipfs/QmUer76hzHehNmGBdXA1D8ax1mNwn426WwgvaJyfCpNQZc
+info: Submitting mint transaction
+debug: mint receipt: [object Object]
+info: NFT Minted successfully! Transaction Hash:0x6cdf198ab5a86fda0d566ef7da39121f2b532a28cc3fadc05671c00ba3f8ff90
+debug: tokenId
+info: NFT Transfered successfully! Transaction Hash:0xed56a2858d464fb672019275a33f7437f34e82cc1f2ec8e41775792accf00a9f
+info: Tokens Transfered successfully! Transaction Hash:0x9bd0fdf5769db07be8721940af2a1efc851ca7ef10fc3a76dfdcb6845f8e90a3
+info: Minting and Coin Distribution Successful for wallet : 0x5AB7E80D46B87be813Bc0FacA13cbce5156Ff04f
+
+info: Initiablizing Quadrant NFT Minting and Distribution...
+info: process.env.NODE_ENV
+info: Users batch size : 1
+info: Minting and Distribution for wallet : 0x9876EedD18BB8aBa5aFfa21e6A14B8553A0F47cD
+info: coinreward 10
+debug: tokenURI: https://gateway.pinata.cloud/ipfs/Qmd57Hu3uZzNhPWQYLucddSBsx1psLunKdSnmFDJ1SgjSw
+info: Submitting mint transaction
+debug: mint receipt: {}
+info: NFT Minted successfully! Transaction Hash:0x2e93e82773f0b73980d86ec5c3db4246d52c6c5f29355064513ce62e3c5ce147
+debug: tokenId
+error: Error Caught in Minting... :  tx is not defined {"stack":"ReferenceError: tx is not defined\n    at transferNFT (/Users/nuwangunarathna/blockchain/quadrant-mint-job/mint/transfer-nft.js:43:22)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)\n    at async mintNFT (/Users/nuwangunarathna/blockchain/quadrant-mint-job/mint/mint.js:208:28)\n    at async _mintNFT (/Users/nuwangunarathna/blockchain/quadrant-mint-job/mint/mint.js:121:7)\n    at async /Users/nuwangunarathna/blockchain/quadrant-mint-job/tests/mint-test.js:6:5"}
+info: Initiablizing Quadrant NFT Minting and Distribution...
+info: process.env.NODE_ENV
+info: Users batch size : 1
+info: Minting and Distribution for wallet : 0x9876EedD18BB8aBa5aFfa21e6A14B8553A0F47cD
+info: coinreward 10
+debug: tokenURI: https://gateway.pinata.cloud/ipfs/Qmd57Hu3uZzNhPWQYLucddSBsx1psLunKdSnmFDJ1SgjSw
+info: Submitting mint transaction
+debug: mintReciept: {}
+info: NFT Minted successfully! Transaction Hash:0xd3ae136f0fcc6c182b80be22b929c47bccc0637b48bf277a2165f97e4c368a1a
+debug: tokenId
+info: NFT Transfered successfully! Transaction Hash:0xf76196fbcd8e9e16a3deb6c15b597092d5886241f3ec767393c43f33af02025d
+info: Tokens Transfered successfully! Transaction Hash:0x778c7d1eb1f1ffde37fc496a3424e5a85f3b7f6412f07e2991e9338525670028
+info: Minting and Coin Distribution Successful for wallet : 0x9876EedD18BB8aBa5aFfa21e6A14B8553A0F47cD
+
+info: Initiablizing Quadrant NFT Minting and Distribution...
+info: process.env.NODE_ENV
+info: Users batch size : 1
+info: Minting and Distribution for wallet : 0x9FCb2BebB9204851545d6F843cc664d39C7E5594
+info: coinreward 20
+debug: tokenURI: https://gateway.pinata.cloud/ipfs/QmZyEVosNxohYDVW37vPiQQTL33ZKaG51pjXrRwEs4J7yU
+info: Submitting mint transaction
+debug: signedTxn: {}
+debug: mintReciept: {}
+info: NFT Minted successfully! Transaction Hash:0x1090cc9c5dbb20a23ee26b3eadd04e4dd89da5bc1a59e4b95c197230dd7c10f7
+debug: tokenId
+info: NFT Transfered successfully! Transaction Hash:0xaaba8e00ad33b8663788c550d7eef2a03e1f2444242769f505f29f86ef21e10c
+info: Tokens Transfered successfully! Transaction Hash:0x6a28afa05b12dd3984873bb53af110930d81486dcff45387b511f252adcd42c8
+info: Minting and Coin Distribution Successful for wallet : 0x9FCb2BebB9204851545d6F843cc664d39C7E5594
+
+info: Initiablizing Quadrant NFT Minting and Distribution...
+info: process.env.NODE_ENV
+info: Users batch size : 1
+info: Minting and Distribution for wallet : 0x5Ab14c7F5d7d97bd85d66e186d6b79941655BDa0
+info: coinreward 30
+debug: tokenURI: https://gateway.pinata.cloud/ipfs/QmUer76hzHehNmGBdXA1D8ax1mNwn426WwgvaJyfCpNQZc
+info: Submitting mint transaction
+debug: signedTxn: {
+  "type": 2,
+  "chainId": 80001,
+  "nonce": 540,
+  "maxPriorityFeePerGas": {
+    "type": "BigNumber",
+    "hex": "0x59682f00"
+  },
+  "maxFeePerGas": {
+    "type": "BigNumber",
+    "hex": "0x59682f20"
+  },
+  "gasPrice": null,
+  "gasLimit": {
+    "type": "BigNumber",
+    "hex": "0x02473e"
+  },
+  "to": "0x0756a62034fDbFbD30394DAB44d9309EC0c62D8C",
+  "value": {
+    "type": "BigNumber",
+    "hex": "0x00"
+  },
+  "data": "0xd85d3d270000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000005068747470733a2f2f676174657761792e70696e6174612e636c6f75642f697066732f516d5565723736687a4865684e6d47426458413144386178316d4e776e34323657776776614a796643704e515a6300000000000000000000000000000000",
+  "accessList": [],
+  "hash": "0x260d377e928947c9e8d9c0aedd83d5904f052d5ef07315916d3e0cedf4af1fe3",
+  "v": 0,
+  "r": "0x15bca6f425a1aa73989a1b79f5af1cea0f2c3bb9804827d170eecddabb1726a3",
+  "s": "0x153243134eed12ae3a65f04c59966f589179cf3ff700eb19a8016e49cc8bbf67",
+  "from": "0x16a1842b8ca64EaD5ff24F21aFd54EAe04974eF5",
+  "confirmations": 0
+}
+debug: mintReciept: {
+  "to": "0x0756a62034fDbFbD30394DAB44d9309EC0c62D8C",
+  "from": "0x16a1842b8ca64EaD5ff24F21aFd54EAe04974eF5",
+  "contractAddress": null,
+  "transactionIndex": 10,
+  "gasUsed": {
+    "type": "BigNumber",
+    "hex": "0x02473e"
+  },
+  "logsBloom": "0x00000000000000000000000000000000000000000000000000000010000000000000000000000020000000000008000000008000000000000000000000000000000000000000000000000008000000800000000000000000000100000000000000000000020000000000000000000800000000000000000080000010000000000000000000000000000000000000000000000000000000000000000000080000200000000100000000000000000000000000000000000008000000000000004000000002000000200001000000000000000000008000000000100000001020000000000000000000000000008000000000000001000000000000000000180000",
+  "blockHash": "0xfdad091f71e0e76eddff3b797837f6223306f81b8de2d9895cc08e9168f3bdcb",
+  "transactionHash": "0x260d377e928947c9e8d9c0aedd83d5904f052d5ef07315916d3e0cedf4af1fe3",
+  "logs": [
+    {
+      "transactionIndex": 10,
+      "blockNumber": 37293253,
+      "transactionHash": "0x260d377e928947c9e8d9c0aedd83d5904f052d5ef07315916d3e0cedf4af1fe3",
+      "address": "0x0756a62034fDbFbD30394DAB44d9309EC0c62D8C",
+      "topics": [
+        "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
+        "0x0000000000000000000000000000000000000000000000000000000000000000",
+        "0x00000000000000000000000016a1842b8ca64ead5ff24f21afd54eae04974ef5",
+        "0x00000000000000000000000000000000000000000000000000000000000000d1"
+      ],
+      "data": "0x",
+      "logIndex": 68,
+      "blockHash": "0xfdad091f71e0e76eddff3b797837f6223306f81b8de2d9895cc08e9168f3bdcb"
+    },
+    {
+      "transactionIndex": 10,
+      "blockNumber": 37293253,
+      "transactionHash": "0x260d377e928947c9e8d9c0aedd83d5904f052d5ef07315916d3e0cedf4af1fe3",
+      "address": "0x0000000000000000000000000000000000001010",
+      "topics": [
+        "0x4dfe1bbbcf077ddc3e01291eea2d5c70c2b422b415d95645b9adcfd678cb1d63",
+        "0x0000000000000000000000000000000000000000000000000000000000001010",
+        "0x00000000000000000000000016a1842b8ca64ead5ff24f21afd54eae04974ef5",
+        "0x000000000000000000000000f903ba9e006193c1527bfbe65fe2123704ea3f99"
+      ],
+      "data": "0x0000000000000000000000000000000000000000000000000000cbb1ea4462000000000000000000000000000000000000000000000000000f753b320517fe70000000000000000000000000000000000000000000000f894e726e9119d5fd740000000000000000000000000000000000000000000000000f746f801ad39c70000000000000000000000000000000000000000000000f894e733a43041a5f74",
+      "logIndex": 69,
+      "blockHash": "0xfdad091f71e0e76eddff3b797837f6223306f81b8de2d9895cc08e9168f3bdcb"
+    }
+  ],
+  "blockNumber": 37293253,
+  "confirmations": 1,
+  "cumulativeGasUsed": {
+    "type": "BigNumber",
+    "hex": "0x1f573e"
+  },
+  "effectiveGasPrice": {
+    "type": "BigNumber",
+    "hex": "0x59682f10"
+  },
+  "status": 1,
+  "type": 2,
+  "byzantium": true
+}
+info: NFT Minted successfully! Transaction Hash:0x260d377e928947c9e8d9c0aedd83d5904f052d5ef07315916d3e0cedf4af1fe3
+debug: tokenId
+info: NFT Transfered successfully! Transaction Hash:0xb0df61de36aa6917d4ef1142e3fe492ff881a5cad79e6b5e8ae4287ef8312aa1
+info: Tokens Transfered successfully! Transaction Hash:0x5e7b6b2b3c765ea62d7d4f627ba5970aa354f5574cb4ec0b2fe25a51298b85fe
+info: Minting and Coin Distribution Successful for wallet : 0x5Ab14c7F5d7d97bd85d66e186d6b79941655BDa0
+
+info: Initiablizing Quadrant NFT Minting and Distribution...
+info: process.env.NODE_ENV
+info: Users batch size : 1
+info: Minting and Distribution for wallet : 0x8287Cf0b8F02d7A6248D76D281016cDdc21Db037
+info: coinreward 10
+debug: tokenURI: https://gateway.pinata.cloud/ipfs/Qmd57Hu3uZzNhPWQYLucddSBsx1psLunKdSnmFDJ1SgjSw
+info: Submitting mint transaction
+debug: signedTxn: {
+  "type": 2,
+  "chainId": 80001,
+  "nonce": 543,
+  "maxPriorityFeePerGas": {
+    "type": "BigNumber",
+    "hex": "0x59682f00"
+  },
+  "maxFeePerGas": {
+    "type": "BigNumber",
+    "hex": "0x59682f22"
+  },
+  "gasPrice": null,
+  "gasLimit": {
+    "type": "BigNumber",
+    "hex": "0x02473e"
+  },
+  "to": "0x0756a62034fDbFbD30394DAB44d9309EC0c62D8C",
+  "value": {
+    "type": "BigNumber",
+    "hex": "0x00"
+  },
+  "data": "0xd85d3d270000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000005068747470733a2f2f676174657761792e70696e6174612e636c6f75642f697066732f516d643537487533755a7a4e68505751594c75636464534273783170734c756e4b64536e6d46444a3153676a537700000000000000000000000000000000",
+  "accessList": [],
+  "hash": "0xe1ac0f776273e0882985420b357ac02d956b2c052566b09c98b7db073792b0e3",
+  "v": 0,
+  "r": "0xcc5ad39f699a6cf2d43c4a5e1201b2ff0241b3b0cc785b6e9d198a0c3dc2ee92",
+  "s": "0x6af48e7a1a5cc4c710fc1208562eeb305a86ee3a98487746e072ac52e830241c",
+  "from": "0x16a1842b8ca64EaD5ff24F21aFd54EAe04974eF5",
+  "confirmations": 0
+}
+debug: mintReciept: {
+  "to": "0x0756a62034fDbFbD30394DAB44d9309EC0c62D8C",
+  "from": "0x16a1842b8ca64EaD5ff24F21aFd54EAe04974eF5",
+  "contractAddress": null,
+  "transactionIndex": 9,
+  "gasUsed": {
+    "type": "BigNumber",
+    "hex": "0x02473e"
+  },
+  "logsBloom": "0x00000000000000000000000000000000000000000000000000000010000000000000000000000020000000000008000000008000000000000000000000010000000000000000000000000008000000800000000000000000000100000000000000000000020000000000000000000800000000000000000080000010000000000000000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000008000000000200004000000002000000200001000000000000000000000000000000100000001020000000000000000000000000008000000000000001000000000040000000180000",
+  "blockHash": "0x40bc775d74b56ec2342f255a23220ecfc3fc1c2f23d7ed58a0b7a1ffa2c48b2c",
+  "transactionHash": "0xe1ac0f776273e0882985420b357ac02d956b2c052566b09c98b7db073792b0e3",
+  "logs": [
+    {
+      "transactionIndex": 9,
+      "blockNumber": 37293565,
+      "transactionHash": "0xe1ac0f776273e0882985420b357ac02d956b2c052566b09c98b7db073792b0e3",
+      "address": "0x0756a62034fDbFbD30394DAB44d9309EC0c62D8C",
+      "topics": [
+        "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
+        "0x0000000000000000000000000000000000000000000000000000000000000000",
+        "0x00000000000000000000000016a1842b8ca64ead5ff24f21afd54eae04974ef5",
+        "0x00000000000000000000000000000000000000000000000000000000000000d2"
+      ],
+      "data": "0x",
+      "logIndex": 46,
+      "blockHash": "0x40bc775d74b56ec2342f255a23220ecfc3fc1c2f23d7ed58a0b7a1ffa2c48b2c"
+    },
+    {
+      "transactionIndex": 9,
+      "blockNumber": 37293565,
+      "transactionHash": "0xe1ac0f776273e0882985420b357ac02d956b2c052566b09c98b7db073792b0e3",
+      "address": "0x0000000000000000000000000000000000001010",
+      "topics": [
+        "0x4dfe1bbbcf077ddc3e01291eea2d5c70c2b422b415d95645b9adcfd678cb1d63",
+        "0x0000000000000000000000000000000000000000000000000000000000001010",
+        "0x00000000000000000000000016a1842b8ca64ead5ff24f21afd54eae04974ef5",
+        "0x000000000000000000000000f903ba9e006193c1527bfbe65fe2123704ea3f99"
+      ],
+      "data": "0x0000000000000000000000000000000000000000000000000000cbb1ea4462000000000000000000000000000000000000000000000000000f7403b3bc484dd9000000000000000000000000000000000000000000000f8983df66c565a0289a0000000000000000000000000000000000000000000000000f733801d203ebd9000000000000000000000000000000000000000000000f8983e032774fe48a9a",
+      "logIndex": 47,
+      "blockHash": "0x40bc775d74b56ec2342f255a23220ecfc3fc1c2f23d7ed58a0b7a1ffa2c48b2c"
+    }
+  ],
+  "blockNumber": 37293565,
+  "confirmations": 1,
+  "cumulativeGasUsed": {
+    "type": "BigNumber",
+    "hex": "0x226727"
+  },
+  "effectiveGasPrice": {
+    "type": "BigNumber",
+    "hex": "0x59682f11"
+  },
+  "status": 1,
+  "type": 2,
+  "byzantium": true
+}
+error: Error Caught in Minting... :  mintReceipt is not defined {"stack":"ReferenceError: mintReceipt is not defined\n    at mintNFT (/Users/nuwangunarathna/blockchain/quadrant-mint-job/mint/mint.js:188:27)\n    at async _mintNFT (/Users/nuwangunarathna/blockchain/quadrant-mint-job/mint/mint.js:121:7)\n    at async /Users/nuwangunarathna/blockchain/quadrant-mint-job/tests/mint-test.js:6:5"}
+info: Initiablizing Quadrant NFT Minting and Distribution...
+info: process.env.NODE_ENV
+info: Users batch size : 1
+info: Minting and Distribution for wallet : 0x8287Cf0b8F02d7A6248D76D281016cDdc21Db037
+info: coinreward 10
+debug: tokenURI: https://gateway.pinata.cloud/ipfs/Qmd57Hu3uZzNhPWQYLucddSBsx1psLunKdSnmFDJ1SgjSw
+info: Submitting mint transaction
+debug: signedTxn: {
+  "type": 2,
+  "chainId": 80001,
+  "nonce": 544,
+  "maxPriorityFeePerGas": {
+    "type": "BigNumber",
+    "hex": "0x59682f00"
+  },
+  "maxFeePerGas": {
+    "type": "BigNumber",
+    "hex": "0x59682f20"
+  },
+  "gasPrice": null,
+  "gasLimit": {
+    "type": "BigNumber",
+    "hex": "0x02473e"
+  },
+  "to": "0x0756a62034fDbFbD30394DAB44d9309EC0c62D8C",
+  "value": {
+    "type": "BigNumber",
+    "hex": "0x00"
+  },
+  "data": "0xd85d3d270000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000005068747470733a2f2f676174657761792e70696e6174612e636c6f75642f697066732f516d643537487533755a7a4e68505751594c75636464534273783170734c756e4b64536e6d46444a3153676a537700000000000000000000000000000000",
+  "accessList": [],
+  "hash": "0x841c403b299302eedbffcc501c92a328521517e5e5799661570254740c75b968",
+  "v": 0,
+  "r": "0x48244d71e18574b5bcedcf1a45c67a55a76b56e55de9873cdfc61fcf3109ee6e",
+  "s": "0x3f16bf06da7d25b83369a9ce00d58d7f77daa2bf65e88a151dbd8d19bc224fef",
+  "from": "0x16a1842b8ca64EaD5ff24F21aFd54EAe04974eF5",
+  "confirmations": 0
+}
+debug: mintReceipt: {
+  "to": "0x0756a62034fDbFbD30394DAB44d9309EC0c62D8C",
+  "from": "0x16a1842b8ca64EaD5ff24F21aFd54EAe04974eF5",
+  "contractAddress": null,
+  "transactionIndex": 9,
+  "gasUsed": {
+    "type": "BigNumber",
+    "hex": "0x02473e"
+  },
+  "logsBloom": "0x00000000000000020004000000000000000000000000000000000000000000000000000000000000020000000008000000008000000000000000000000000000000000000000000000000008000000800000000000000000000100000000000000000000020000000000000000000800000000000000000080000010000000000000000000000000000000000000000000000000000000000000000000000000200000000000000020000000000000000001000000000008000000000000004000000002000000200001000000000000000000001000000000100000000020000000000000000000000000008000000000000001000000000000000000180000",
+  "blockHash": "0x750acd0bff64acc068ea18da56ac971c06b7a6051f12d6828ff03c511976a533",
+  "transactionHash": "0x841c403b299302eedbffcc501c92a328521517e5e5799661570254740c75b968",
+  "logs": [
+    {
+      "transactionIndex": 9,
+      "blockNumber": 37293617,
+      "transactionHash": "0x841c403b299302eedbffcc501c92a328521517e5e5799661570254740c75b968",
+      "address": "0x0756a62034fDbFbD30394DAB44d9309EC0c62D8C",
+      "topics": [
+        "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
+        "0x0000000000000000000000000000000000000000000000000000000000000000",
+        "0x00000000000000000000000016a1842b8ca64ead5ff24f21afd54eae04974ef5",
+        "0x00000000000000000000000000000000000000000000000000000000000000d3"
+      ],
+      "data": "0x",
+      "logIndex": 44,
+      "blockHash": "0x750acd0bff64acc068ea18da56ac971c06b7a6051f12d6828ff03c511976a533"
+    },
+    {
+      "transactionIndex": 9,
+      "blockNumber": 37293617,
+      "transactionHash": "0x841c403b299302eedbffcc501c92a328521517e5e5799661570254740c75b968",
+      "address": "0x0000000000000000000000000000000000001010",
+      "topics": [
+        "0x4dfe1bbbcf077ddc3e01291eea2d5c70c2b422b415d95645b9adcfd678cb1d63",
+        "0x0000000000000000000000000000000000000000000000000000000000001010",
+        "0x00000000000000000000000016a1842b8ca64ead5ff24f21afd54eae04974ef5",
+        "0x000000000000000000000000c26880a0af2ea0c7e8130e6ec47af756465452e8"
+      ],
+      "data": "0x0000000000000000000000000000000000000000000000000000cbb1ea4462000000000000000000000000000000000000000000000000000f733801d1dd30bb00000000000000000000000000000000000000000000206cab820ee7efb056f50000000000000000000000000000000000000000000000000f726c4fe798cebb00000000000000000000000000000000000000000000206cab82da99d9f4b8f5",
+      "logIndex": 45,
+      "blockHash": "0x750acd0bff64acc068ea18da56ac971c06b7a6051f12d6828ff03c511976a533"
+    }
+  ],
+  "blockNumber": 37293617,
+  "confirmations": 1,
+  "cumulativeGasUsed": {
+    "type": "BigNumber",
+    "hex": "0x19e862"
+  },
+  "effectiveGasPrice": {
+    "type": "BigNumber",
+    "hex": "0x59682f10"
+  },
+  "status": 1,
+  "type": 2,
+  "byzantium": true
+}
+debug: Transaction status: Success
+info: NFT Minted successfully! Transaction Hash:0x841c403b299302eedbffcc501c92a328521517e5e5799661570254740c75b968
+debug: tokenId
+info: NFT Transfered successfully! Transaction Hash:0x8f27b82de0fa6a3baf5cfcf352e4db3faaa74ca6a8dea01d9f731718a088a622
+error: Error Caught in Minting... :  reward is not defined {"stack":"ReferenceError: reward is not defined\n    at mintNFT (/Users/nuwangunarathna/blockchain/quadrant-mint-job/mint/mint.js:227:7)\n    at async _mintNFT (/Users/nuwangunarathna/blockchain/quadrant-mint-job/mint/mint.js:121:7)\n    at async /Users/nuwangunarathna/blockchain/quadrant-mint-job/tests/mint-test.js:6:5"}
+info: Initiablizing Quadrant NFT Minting and Distribution...
+info: process.env.NODE_ENV
+info: Users batch size : 1
+info: Minting and Distribution for wallet : 0x8287Cf0b8F02d7A6248D76D281016cDdc21Db037
+info: coinreward 10
+debug: tokenURI: https://gateway.pinata.cloud/ipfs/Qmd57Hu3uZzNhPWQYLucddSBsx1psLunKdSnmFDJ1SgjSw
+info: Submitting mint transaction
+debug: signedTxn: {
+  "type": 2,
+  "chainId": 80001,
+  "nonce": 546,
+  "maxPriorityFeePerGas": {
+    "type": "BigNumber",
+    "hex": "0x59682f00"
+  },
+  "maxFeePerGas": {
+    "type": "BigNumber",
+    "hex": "0x59682f22"
+  },
+  "gasPrice": null,
+  "gasLimit": {
+    "type": "BigNumber",
+    "hex": "0x02473e"
+  },
+  "to": "0x0756a62034fDbFbD30394DAB44d9309EC0c62D8C",
+  "value": {
+    "type": "BigNumber",
+    "hex": "0x00"
+  },
+  "data": "0xd85d3d270000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000005068747470733a2f2f676174657761792e70696e6174612e636c6f75642f697066732f516d643537487533755a7a4e68505751594c75636464534273783170734c756e4b64536e6d46444a3153676a537700000000000000000000000000000000",
+  "accessList": [],
+  "hash": "0x179a696e4ad72d78f8b555e7d62d5e034df7f21b682e6c81f447bb1777e874f1",
+  "v": 0,
+  "r": "0x9a1b83217a0e4f80bd34ac5a48fa5b7a862e10c1c50808987805260d1c6e4f3b",
+  "s": "0x5fdae68fbc75a7eda808f6e15854945b43ea3f0a880035e84cf608a4637aceff",
+  "from": "0x16a1842b8ca64EaD5ff24F21aFd54EAe04974eF5",
+  "confirmations": 0
+}
+debug: mintReceipt: {
+  "to": "0x0756a62034fDbFbD30394DAB44d9309EC0c62D8C",
+  "from": "0x16a1842b8ca64EaD5ff24F21aFd54EAe04974eF5",
+  "contractAddress": null,
+  "transactionIndex": 11,
+  "gasUsed": {
+    "type": "BigNumber",
+    "hex": "0x02473e"
+  },
+  "logsBloom": "0x00000000000000000000000000000001000000000000000000000000000000000000000000000000000200000008000000008000000000000000000000008000000000000000000000000008000000800000000000000000000100000000000000000000020000000000000000000800000000000000000080000010000000000000000000000000000000000000000000000000000000000000000000000000200000000000000000080000000000000000200000000008000000000000004000000002000000200001000000000100000000000000000000100000000020000000000000000000000000008000000000000001000000000000000000180000",
+  "blockHash": "0x3bbeae4f794f0df2fa48947b2655fd0851baf7626b618c870bee0117efb7981f",
+  "transactionHash": "0x179a696e4ad72d78f8b555e7d62d5e034df7f21b682e6c81f447bb1777e874f1",
+  "logs": [
+    {
+      "transactionIndex": 11,
+      "blockNumber": 37293710,
+      "transactionHash": "0x179a696e4ad72d78f8b555e7d62d5e034df7f21b682e6c81f447bb1777e874f1",
+      "address": "0x0756a62034fDbFbD30394DAB44d9309EC0c62D8C",
+      "topics": [
+        "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
+        "0x0000000000000000000000000000000000000000000000000000000000000000",
+        "0x00000000000000000000000016a1842b8ca64ead5ff24f21afd54eae04974ef5",
+        "0x00000000000000000000000000000000000000000000000000000000000000d4"
+      ],
+      "data": "0x",
+      "logIndex": 62,
+      "blockHash": "0x3bbeae4f794f0df2fa48947b2655fd0851baf7626b618c870bee0117efb7981f"
+    },
+    {
+      "transactionIndex": 11,
+      "blockNumber": 37293710,
+      "transactionHash": "0x179a696e4ad72d78f8b555e7d62d5e034df7f21b682e6c81f447bb1777e874f1",
+      "address": "0x0000000000000000000000000000000000001010",
+      "topics": [
+        "0x4dfe1bbbcf077ddc3e01291eea2d5c70c2b422b415d95645b9adcfd678cb1d63",
+        "0x0000000000000000000000000000000000000000000000000000000000001010",
+        "0x00000000000000000000000016a1842b8ca64ead5ff24f21afd54eae04974ef5",
+        "0x0000000000000000000000003a22c8bc68e98b0faf40f349dd2b2890fae01484"
+      ],
+      "data": "0x0000000000000000000000000000000000000000000000000000cbb1ea4462000000000000000000000000000000000000000000000000000f723069e91cc4bb000000000000000000000000000000000000000000000bbd67d08da6cc8357e50000000000000000000000000000000000000000000000000f7164b7fed862bb000000000000000000000000000000000000000000000bbd67d15958b6c7b9e5",
+      "logIndex": 63,
+      "blockHash": "0x3bbeae4f794f0df2fa48947b2655fd0851baf7626b618c870bee0117efb7981f"
+    }
+  ],
+  "blockNumber": 37293710,
+  "confirmations": 1,
+  "cumulativeGasUsed": {
+    "type": "BigNumber",
+    "hex": "0x572af1"
+  },
+  "effectiveGasPrice": {
+    "type": "BigNumber",
+    "hex": "0x59682f11"
+  },
+  "status": 1,
+  "type": 2,
+  "byzantium": true
+}
+debug: Transaction status: Success
+info: NFT Minted successfully! Transaction Hash:0x179a696e4ad72d78f8b555e7d62d5e034df7f21b682e6c81f447bb1777e874f1
+debug: tokenId
+info: NFT Transfered successfully! Transaction Hash:0xd7ea9aad8815c056edd54aa7baea2797b59f5320f3fb1fa681bfba49705eeda8
+info: Tokens Transfered successfully! Transaction Hash:0xdaf1594298618d4a0b3f9227d87fad613ef0a3d406ec25a0c10b1be18fd831ad
+info: Minting and Coin Distribution Successful for wallet : 0x8287Cf0b8F02d7A6248D76D281016cDdc21Db037
+
+info: Preparing Database!
+info: Preparing Database!
+info: Initiablizing Quadrant NFT Minting and Distribution...
+info: process.env.NODE_ENV
+info: Users batch size : 1
+info: Minting and Distribution for wallet : 0x0B3d07B26D2e5E1d0c2696d0E13d26BFD7344579
+info: coinreward 10
+debug: token_uri: https://gateway.pinata.cloud/ipfs/Qmd57Hu3uZzNhPWQYLucddSBsx1psLunKdSnmFDJ1SgjSw
+info: Submitting mint transaction
+debug: signedTxn: {
+  "type": 2,
+  "chainId": 80001,
+  "nonce": 549,
+  "maxPriorityFeePerGas": {
+    "type": "BigNumber",
+    "hex": "0x59682f00"
+  },
+  "maxFeePerGas": {
+    "type": "BigNumber",
+    "hex": "0x59682f20"
+  },
+  "gasPrice": null,
+  "gasLimit": {
+    "type": "BigNumber",
+    "hex": "0x02473e"
+  },
+  "to": "0x0756a62034fDbFbD30394DAB44d9309EC0c62D8C",
+  "value": {
+    "type": "BigNumber",
+    "hex": "0x00"
+  },
+  "data": "0xd85d3d270000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000005068747470733a2f2f676174657761792e70696e6174612e636c6f75642f697066732f516d643537487533755a7a4e68505751594c75636464534273783170734c756e4b64536e6d46444a3153676a537700000000000000000000000000000000",
+  "accessList": [],
+  "hash": "0x984c1a5da42ef5ab7b2b05607800f27e216df2db670001210629f3e81522b054",
+  "v": 1,
+  "r": "0x1ae75a75f8d656e17b8b5f9e60b6adcb9e18afe0588679e973bc3a1be67654ae",
+  "s": "0x184df675698c5bd82314a994220ea199a2451b81b898b652053dfa021dcdcf4a",
+  "from": "0x16a1842b8ca64EaD5ff24F21aFd54EAe04974eF5",
+  "confirmations": 0
+}
+debug: mintReceipt: {
+  "to": "0x0756a62034fDbFbD30394DAB44d9309EC0c62D8C",
+  "from": "0x16a1842b8ca64EaD5ff24F21aFd54EAe04974eF5",
+  "contractAddress": null,
+  "transactionIndex": 14,
+  "gasUsed": {
+    "type": "BigNumber",
+    "hex": "0x02473e"
+  },
+  "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000008000000008000000000000000000000008000000002000000000000000008000000800000000000000000000100000000000000000000020000000000000000000800000000000000000080000010000000000000000000000000000000000000000000000000000000000000000000000000200000000000000000080000000000000000000000000008000000000000004000000002000000200001000000000120000000000000000000100000000020000000000000000000000000008800000000000001000000000000000000180000",
+  "blockHash": "0xe357f61b4b8d8fafaffb4eeb2356cba469b5289ee6a078bebbe0f2460cf9888e",
+  "transactionHash": "0x984c1a5da42ef5ab7b2b05607800f27e216df2db670001210629f3e81522b054",
+  "logs": [
+    {
+      "transactionIndex": 14,
+      "blockNumber": 37294524,
+      "transactionHash": "0x984c1a5da42ef5ab7b2b05607800f27e216df2db670001210629f3e81522b054",
+      "address": "0x0756a62034fDbFbD30394DAB44d9309EC0c62D8C",
+      "topics": [
+        "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
+        "0x0000000000000000000000000000000000000000000000000000000000000000",
+        "0x00000000000000000000000016a1842b8ca64ead5ff24f21afd54eae04974ef5",
+        "0x00000000000000000000000000000000000000000000000000000000000000d5"
+      ],
+      "data": "0x",
+      "logIndex": 65,
+      "blockHash": "0xe357f61b4b8d8fafaffb4eeb2356cba469b5289ee6a078bebbe0f2460cf9888e"
+    },
+    {
+      "transactionIndex": 14,
+      "blockNumber": 37294524,
+      "transactionHash": "0x984c1a5da42ef5ab7b2b05607800f27e216df2db670001210629f3e81522b054",
+      "address": "0x0000000000000000000000000000000000001010",
+      "topics": [
+        "0x4dfe1bbbcf077ddc3e01291eea2d5c70c2b422b415d95645b9adcfd678cb1d63",
+        "0x0000000000000000000000000000000000000000000000000000000000001010",
+        "0x00000000000000000000000016a1842b8ca64ead5ff24f21afd54eae04974ef5",
+        "0x0000000000000000000000003a22c8bc68e98b0faf40f349dd2b2890fae01484"
+      ],
+      "data": "0x0000000000000000000000000000000000000000000000000000cbb1ea4462000000000000000000000000000000000000000000000000000f70f8efd12c5630000000000000000000000000000000000000000000000bbda0a05af79906dbaa0000000000000000000000000000000000000000000000000f702d3de6e7f430000000000000000000000000000000000000000000000bbda0a126a9834b3daa",
+      "logIndex": 66,
+      "blockHash": "0xe357f61b4b8d8fafaffb4eeb2356cba469b5289ee6a078bebbe0f2460cf9888e"
+    }
+  ],
+  "blockNumber": 37294524,
+  "confirmations": 1,
+  "cumulativeGasUsed": {
+    "type": "BigNumber",
+    "hex": "0x1b85eb"
+  },
+  "effectiveGasPrice": {
+    "type": "BigNumber",
+    "hex": "0x59682f10"
+  },
+  "status": 1,
+  "type": 2,
+  "byzantium": true
+}
+debug: NFT Mint Tnx Status: Success
+info: NFT Minted successfully! Transaction Hash:undefined
+debug: token_id: 213
+error: Error Caught in Minting... :  nft_transfer_status is not defined {"stack":"ReferenceError: nft_transfer_status is not defined\n    at transferNFT (/Users/nuwangunarathna/blockchain/quadrant-mint-job/mint/transfer-nft.js:50:13)\n    at async mintNFT (/Users/nuwangunarathna/blockchain/quadrant-mint-job/mint/mint.js:203:28)\n    at async _mintNFT (/Users/nuwangunarathna/blockchain/quadrant-mint-job/mint/mint.js:121:7)\n    at async /Users/nuwangunarathna/blockchain/quadrant-mint-job/tests/mint-test.js:6:5"}
+info: Initiablizing Quadrant NFT Minting and Distribution...
+info: process.env.NODE_ENV
+info: Users batch size : 1
+info: Minting and Distribution for wallet : 0x0B3d07B26D2e5E1d0c2696d0E13d26BFD7344579
+info: coinreward 10
+debug: token_uri: https://gateway.pinata.cloud/ipfs/Qmd57Hu3uZzNhPWQYLucddSBsx1psLunKdSnmFDJ1SgjSw
+info: Submitting mint transaction
+debug: signedTxn: {
+  "type": 2,
+  "chainId": 80001,
+  "nonce": 551,
+  "maxPriorityFeePerGas": {
+    "type": "BigNumber",
+    "hex": "0x59682f00"
+  },
+  "maxFeePerGas": {
+    "type": "BigNumber",
+    "hex": "0x59682f24"
+  },
+  "gasPrice": null,
+  "gasLimit": {
+    "type": "BigNumber",
+    "hex": "0x02473e"
+  },
+  "to": "0x0756a62034fDbFbD30394DAB44d9309EC0c62D8C",
+  "value": {
+    "type": "BigNumber",
+    "hex": "0x00"
+  },
+  "data": "0xd85d3d270000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000005068747470733a2f2f676174657761792e70696e6174612e636c6f75642f697066732f516d643537487533755a7a4e68505751594c75636464534273783170734c756e4b64536e6d46444a3153676a537700000000000000000000000000000000",
+  "accessList": [],
+  "hash": "0xd54f18b48be9a245f6def6dd79dda17de7b01dcaac6e313d6a6df80cec3e49a0",
+  "v": 1,
+  "r": "0x3fce333059a1222c9810fb9046df0bfbb568caf2151d35da044415610981b785",
+  "s": "0x420e213a4ab08579ed1c4de2b3b703e7ee567861838a390a5b875e41e4fceb74",
+  "from": "0x16a1842b8ca64EaD5ff24F21aFd54EAe04974eF5",
+  "confirmations": 0
+}
+debug: mintReceipt: {
+  "to": "0x0756a62034fDbFbD30394DAB44d9309EC0c62D8C",
+  "from": "0x16a1842b8ca64EaD5ff24F21aFd54EAe04974eF5",
+  "contractAddress": null,
+  "transactionIndex": 3,
+  "gasUsed": {
+    "type": "BigNumber",
+    "hex": "0x02473e"
+  },
+  "logsBloom": "0x00000000000000000000000000000000000000800000000000000000000000000000000000008000000000000008000000008000000000000000000000000000000000000000000000000008000000800000000000000000000100000000004000000000020000000000000000000800000000000000000080000010000000000000000000000000000000000000000000000000000080000000000000000000200000000000000000000000000000000000000000000008000000000000004000000002000000200001000000000000000000000000000000100040000020000000000000000000000000008000000000000001000000008000000000180000",
+  "blockHash": "0x629ec3b9628d7041c2abb583a0d0c0d85132c66c222a3de06c164061e15b13bf",
+  "transactionHash": "0xd54f18b48be9a245f6def6dd79dda17de7b01dcaac6e313d6a6df80cec3e49a0",
+  "logs": [
+    {
+      "transactionIndex": 3,
+      "blockNumber": 37295074,
+      "transactionHash": "0xd54f18b48be9a245f6def6dd79dda17de7b01dcaac6e313d6a6df80cec3e49a0",
+      "address": "0x0756a62034fDbFbD30394DAB44d9309EC0c62D8C",
+      "topics": [
+        "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
+        "0x0000000000000000000000000000000000000000000000000000000000000000",
+        "0x00000000000000000000000016a1842b8ca64ead5ff24f21afd54eae04974ef5",
+        "0x00000000000000000000000000000000000000000000000000000000000000d6"
+      ],
+      "data": "0x",
+      "logIndex": 30,
+      "blockHash": "0x629ec3b9628d7041c2abb583a0d0c0d85132c66c222a3de06c164061e15b13bf"
+    },
+    {
+      "transactionIndex": 3,
+      "blockNumber": 37295074,
+      "transactionHash": "0xd54f18b48be9a245f6def6dd79dda17de7b01dcaac6e313d6a6df80cec3e49a0",
+      "address": "0x0000000000000000000000000000000000001010",
+      "topics": [
+        "0x4dfe1bbbcf077ddc3e01291eea2d5c70c2b422b415d95645b9adcfd678cb1d63",
+        "0x0000000000000000000000000000000000000000000000000000000000001010",
+        "0x00000000000000000000000016a1842b8ca64ead5ff24f21afd54eae04974ef5",
+        "0x000000000000000000000000be188d6641e8b680743a4815dfa0f6208038960f"
+      ],
+      "data": "0x0000000000000000000000000000000000000000000000000000cbb1ea4462000000000000000000000000000000000000000000000000000f6ff157e86bea300000000000000000000000000000000000000000000032a105eca2e4a186cf670000000000000000000000000000000000000000000000000f6f25a5fe2788300000000000000000000000000000000000000000000032a105ed6e968bcb3167",
+      "logIndex": 31,
+      "blockHash": "0x629ec3b9628d7041c2abb583a0d0c0d85132c66c222a3de06c164061e15b13bf"
+    }
+  ],
+  "blockNumber": 37295074,
+  "confirmations": 1,
+  "cumulativeGasUsed": {
+    "type": "BigNumber",
+    "hex": "0x0de2ce"
+  },
+  "effectiveGasPrice": {
+    "type": "BigNumber",
+    "hex": "0x59682f12"
+  },
+  "status": 1,
+  "type": 2,
+  "byzantium": true
+}
+debug: NFT Mint Tnx Status: Success
+info: NFT Minted successfully! Transaction Hash:undefined
+debug: token_id: 214
+info: Test
+debug: NFT Transfer Tnx Status: Success
+debug: nftTransferReceipt: {
+  "to": "0x0756a62034fDbFbD30394DAB44d9309EC0c62D8C",
+  "from": "0x16a1842b8ca64EaD5ff24F21aFd54EAe04974eF5",
+  "contractAddress": null,
+  "transactionIndex": 6,
+  "gasUsed": {
+    "type": "BigNumber",
+    "hex": "0xab82"
+  },
+  "logsBloom": "0x0000000000000000000000000000000800000080000000000000000000000200000000000000800000000000000800000000800000000000000000000000000000000000000000000000000800000080000000000000000000010000000000c000000000000000000000000000000000000000000000000080000010000000000000000000000000000000000000000000000000000080000000000000000000200000000000000000000000000000000000000000000008000000000000004000000002000000200001000000000000000000000000000000100040000000000000000000000000000000008000000000000001000000008000000000180000",
+  "blockHash": "0x25cb485bb961ec5f1bad5b65f31699179577ce64c874f978bbe3acf0e4cdfd7a",
+  "transactionHash": "0x2f5f6249cde49228d40748119ca24142f59689449055e0c4eb8a25acf0f82f23",
+  "logs": [
+    {
+      "transactionIndex": 6,
+      "blockNumber": 37295082,
+      "transactionHash": "0x2f5f6249cde49228d40748119ca24142f59689449055e0c4eb8a25acf0f82f23",
+      "address": "0x0756a62034fDbFbD30394DAB44d9309EC0c62D8C",
+      "topics": [
+        "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
+        "0x00000000000000000000000016a1842b8ca64ead5ff24f21afd54eae04974ef5",
+        "0x0000000000000000000000000b3d07b26d2e5e1d0c2696d0e13d26bfd7344579",
+        "0x00000000000000000000000000000000000000000000000000000000000000d6"
+      ],
+      "data": "0x",
+      "logIndex": 26,
+      "blockHash": "0x25cb485bb961ec5f1bad5b65f31699179577ce64c874f978bbe3acf0e4cdfd7a"
+    },
+    {
+      "transactionIndex": 6,
+      "blockNumber": 37295082,
+      "transactionHash": "0x2f5f6249cde49228d40748119ca24142f59689449055e0c4eb8a25acf0f82f23",
+      "address": "0x0000000000000000000000000000000000001010",
+      "topics": [
+        "0x4dfe1bbbcf077ddc3e01291eea2d5c70c2b422b415d95645b9adcfd678cb1d63",
+        "0x0000000000000000000000000000000000000000000000000000000000001010",
+        "0x00000000000000000000000016a1842b8ca64ead5ff24f21afd54eae04974ef5",
+        "0x000000000000000000000000be188d6641e8b680743a4815dfa0f6208038960f"
+      ],
+      "data": "0x00000000000000000000000000000000000000000000000000003be5fe4cde000000000000000000000000000000000000000000000000000f6f25a5fdfe85d40000000000000000000000000000000000000000000032a106dbef3ee991177d0000000000000000000000000000000000000000000000000f6ee9bfffb1a7d40000000000000000000000000000000000000000000032a106dc2b24e7ddf57d",
+      "logIndex": 27,
+      "blockHash": "0x25cb485bb961ec5f1bad5b65f31699179577ce64c874f978bbe3acf0e4cdfd7a"
+    }
+  ],
+  "blockNumber": 37295082,
+  "confirmations": 1,
+  "cumulativeGasUsed": {
+    "type": "BigNumber",
+    "hex": "0x1455f2"
+  },
+  "effectiveGasPrice": {
+    "type": "BigNumber",
+    "hex": "0x59682f11"
+  },
+  "status": 1,
+  "type": 2,
+  "byzantium": true,
+  "events": [
+    {
+      "transactionIndex": 6,
+      "blockNumber": 37295082,
+      "transactionHash": "0x2f5f6249cde49228d40748119ca24142f59689449055e0c4eb8a25acf0f82f23",
+      "address": "0x0756a62034fDbFbD30394DAB44d9309EC0c62D8C",
+      "topics": [
+        "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
+        "0x00000000000000000000000016a1842b8ca64ead5ff24f21afd54eae04974ef5",
+        "0x0000000000000000000000000b3d07b26d2e5e1d0c2696d0e13d26bfd7344579",
+        "0x00000000000000000000000000000000000000000000000000000000000000d6"
+      ],
+      "data": "0x",
+      "logIndex": 26,
+      "blockHash": "0x25cb485bb961ec5f1bad5b65f31699179577ce64c874f978bbe3acf0e4cdfd7a"
+    },
+    {
+      "transactionIndex": 6,
+      "blockNumber": 37295082,
+      "transactionHash": "0x2f5f6249cde49228d40748119ca24142f59689449055e0c4eb8a25acf0f82f23",
+      "address": "0x0000000000000000000000000000000000001010",
+      "topics": [
+        "0x4dfe1bbbcf077ddc3e01291eea2d5c70c2b422b415d95645b9adcfd678cb1d63",
+        "0x0000000000000000000000000000000000000000000000000000000000001010",
+        "0x00000000000000000000000016a1842b8ca64ead5ff24f21afd54eae04974ef5",
+        "0x000000000000000000000000be188d6641e8b680743a4815dfa0f6208038960f"
+      ],
+      "data": "0x00000000000000000000000000000000000000000000000000003be5fe4cde000000000000000000000000000000000000000000000000000f6f25a5fdfe85d40000000000000000000000000000000000000000000032a106dbef3ee991177d0000000000000000000000000000000000000000000000000f6ee9bfffb1a7d40000000000000000000000000000000000000000000032a106dc2b24e7ddf57d",
+      "logIndex": 27,
+      "blockHash": "0x25cb485bb961ec5f1bad5b65f31699179577ce64c874f978bbe3acf0e4cdfd7a"
+    }
+  ]
+}
+info: NFT Transfered successfully! Transaction Hash:0x2f5f6249cde49228d40748119ca24142f59689449055e0c4eb8a25acf0f82f23
+info: Tokens Transfered successfully! Transaction Hash:0xf37f2b03dd0cf7dc17e6b53ce371a77c46f51985faf146b1cfe8aaf69cabd29c
+info: Minting and Coin Distribution Successful for wallet : 0x0B3d07B26D2e5E1d0c2696d0E13d26BFD7344579
+

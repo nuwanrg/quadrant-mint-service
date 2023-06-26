@@ -160,57 +160,54 @@ async function mintNFT(user_address) {
     // const gasFee = await getGasPrice();
 
     //Get the coin amout associated with NFT to be rewared.
-    const reward = await getRewards(user_address);
-    logger.info("coinreward " + reward);
+    coin_reward = await getRewards(user_address);
+    logger.info("coinreward " + coin_reward);
 
     //Get token uri. Coin reward associated with NFT are stored in NFT metadata in token uri.
-    const tokenURI = await uploadJSONToPinata(reward);
-    logger.debug("tokenURI: " + tokenURI);
+    token_uri = await uploadJSONToPinata(coin_reward);
+    logger.debug("token_uri: " + token_uri);
 
     //Populate mint transaction. Not required to pass nonce as the program wait until the current mint and distribution is finished.
     //In case current approach is not scalable and distribution transation keep hanging too long, the minting process can keep loop by current nonce.
     //But for the current desing its not required to pass the nonce.
     let rawTxn = await contractInstance.populateTransaction.mint(
-      tokenURI /*, {
+      token_uri /*, {
       gasPrice: gasFee,
       nonce: nonce,
     }*/
     );
 
     logger.info("Submitting mint transaction");
-    let signedTxn = (await wallet).sendTransaction(rawTxn);
-    let reciept = (await signedTxn).wait();
-
+    let signedTxn = await wallet.sendTransaction(rawTxn);
     //get tnx hash of mint
-    nft_mint_hash = (await signedTxn).hash;
-    token_uri = tokenURI;
-    coin_reward = reward;
+    let mintReceipt = await signedTxn.wait();
+    nft_mint_hash = mintReceipt.hash;
+    nft_mint_status = mintReceipt.status ? "Success" : "Failed";
 
-    //Minting success
-    nft_mint_status = "Success";
-
+    logger.debug("signedTxn: " + JSON.stringify(signedTxn, null, 2));
+    logger.debug("mintReceipt: " + JSON.stringify(mintReceipt, null, 2));
+    logger.debug("NFT Mint Tnx Status: " + nft_mint_status);
     //console.log("reciept", await signedTxn);
-    logger.info(
-      "NFT Minted successfully! Transaction Hash:" + (await signedTxn).hash
-    );
+    logger.info("NFT Minted successfully! Transaction Hash:" + nft_mint_hash);
 
-    //Retrive tokenId of the mint
-    const tokenId = await contractInstance.tokenCounter();
+    //Retrive token_id of the mint
+    token_id = await contractInstance.tokenCounter();
     // Replace with your actual BigNumber
     //let tokenIdBigNumber = tokenId;
-    let tokenIdNumber = tokenId.toNumber() - 1; // Converts to JavaScript number - be careful with large values
-    token_id = tokenIdNumber;
+    token_id = token_id.toNumber() - 1; // Converts to JavaScript number - be careful with large values
+    // token_id = tokenIdNumber;
 
-    logger.debug("tokenId", tokenIdNumber);
+    logger.debug("token_id: " + token_id);
 
     //Tranfer the NFT to user's wallet
     const nftTransferRes = await transferNFT(
       privateKey,
       contractAddress,
-      tokenIdNumber,
+      token_id,
       user_address,
       QUICKNODE_HTTP_ENDPOINT
     );
+
     nft_transfer_status = nftTransferRes[0];
     nft_transfer_hash = nftTransferRes[1];
     logger.info(
@@ -222,7 +219,7 @@ async function mintNFT(user_address) {
       tokenContractAddress,
       privateKey,
       user_address,
-      reward
+      coin_reward
     );
     coin_transfer_status = coinTransferRes[0];
     coin_transfer_hash = coinTransferRes[1];
@@ -290,20 +287,4 @@ function delay(t, v) {
   });
 }
 
-// (async () => {
-//   try {
-//     if (process.env.ENVIRONENT !== "PROD") {
-//       const preparedb = await prepareDB();
-//     }
-//   } catch (err) {
-//     console.error(err);
-//   }
-//   const initstatus = await init();
-// })();
-
 module.exports = { _mintNFT, mintNFT };
-
-//exports _mintNFT;
-
-//For local testing
-//mintNFT("0x16a1842b8ca64EaD5ff24F21aFd54EAe04974eF5", "METADATA_URL");
