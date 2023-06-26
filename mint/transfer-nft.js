@@ -1,5 +1,9 @@
 const ethers = require("ethers");
+const logger = require("../logger");
 
+/**
+ * Initiates the transfer of a specified NFT from the wallet associated with the given privateKey to a recipient's address, and returns the transaction status and hash.
+ */
 async function transferNFT(
   privateKey,
   contractAddress,
@@ -7,6 +11,10 @@ async function transferNFT(
   recipientAddress,
   providerURL
 ) {
+  let nft_transfer_status = "";
+  let nft_transfer_hash = "";
+  let tx;
+  let nftTransferReceipt;
   try {
     // Create a new instance of ethers.Wallet with the private key
     // Connect the wallet to the Ethereum network
@@ -17,7 +25,6 @@ async function transferNFT(
 
     // Define the contract ABI (Application Binary Interface)
     // The ABI is a JSON array containing the contract's function and event specifications
-    // Replace this with the actual ABI of your contract
     const contractABI = [
       // ERC721 transfer function
       "function transferFrom(address from, address to, uint256 tokenId) public",
@@ -27,21 +34,32 @@ async function transferNFT(
     const contract = new ethers.Contract(contractAddress, contractABI, wallet);
 
     // Call the contract's `transferFrom` function
-    const tx = await contract.transferFrom(
-      wallet.address,
-      recipientAddress,
-      tokenId
-    );
+    tx = await contract.transferFrom(wallet.address, recipientAddress, tokenId);
+    logger.info("Test");
 
-    // Wait for the transaction to be mined
-    const receipt = await tx.wait();
+    // Get transaction hash
+    nft_transfer_hash = tx.hash;
 
-    // Return the transaction receipt
-    return ["Success", receipt.transactionHash];
+    try {
+      // Wait for the transaction to be mined
+      nftTransferReceipt = await tx.wait();
+      nft_transfer_status = nftTransferReceipt.status ? "Success" : "Failed";
+      logger.debug("NFT Transfer Tnx Status: " + nft_transfer_status);
+    } catch (error) {
+      logger.error("Error while waiting for transaction receipt: " + error);
+      nft_transfer_status = "Failed";
+    }
   } catch (error) {
-    console.log("Error in Transferring NFT to, ");
-    return ["Error", tx];
+    logger.error("Error in Transferring NFT..." + error);
+    nft_transfer_status = "Failed";
   }
+
+  logger.debug(
+    "nftTransferReceipt: " + JSON.stringify(nftTransferReceipt, null, 2)
+  );
+
+  // Return the transaction receipt
+  return [nft_transfer_status, nft_transfer_hash];
 }
 
 module.exports = transferNFT;
