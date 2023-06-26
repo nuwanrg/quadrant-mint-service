@@ -200,7 +200,7 @@ async function mintNFT(user_address) {
     logger.debug("token_id: " + token_id);
 
     //Tranfer the NFT to user's wallet
-    const nftTransferRes = await transferNFT(
+    const [nft_transfer_status, nft_transfer_hash] = await transferNFT(
       privateKey,
       contractAddress,
       token_id,
@@ -208,21 +208,18 @@ async function mintNFT(user_address) {
       QUICKNODE_HTTP_ENDPOINT
     );
 
-    nft_transfer_status = nftTransferRes[0];
-    nft_transfer_hash = nftTransferRes[1];
     logger.info(
       "NFT Transfered successfully! Transaction Hash:" + nft_transfer_hash
     );
 
     //Transfe coin to users wallet
-    const coinTransferRes = await transferTokens(
+    const [coin_transfer_status, coin_transfer_hash] = await transferTokens(
       tokenContractAddress,
       privateKey,
       user_address,
       coin_reward
     );
-    coin_transfer_status = coinTransferRes[0];
-    coin_transfer_hash = coinTransferRes[1];
+
     logger.info(
       "Tokens Transfered successfully! Transaction Hash:" + coin_transfer_hash
     );
