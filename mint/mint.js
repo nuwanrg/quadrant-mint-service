@@ -110,13 +110,13 @@ async function _mintNFT() {
   try {
     await init();
     const users = await getUsersByRewarded();
-    logger.info("Users batch size : " + users.length);
+    logger.info(`Users batch size : ${users.length}`);
 
     for (let user of users) {
       // reset the transfer_status to false before minting the next NFT
       transfer_status = false;
       logger.info(
-        "Minting and Distribution for wallet : " + user.wallet_address
+        `Minting and Distribution for wallet : ${user.wallet_address}`
       );
       await mintNFT(user.wallet_address, "METADATA_URL");
 
@@ -126,11 +126,11 @@ async function _mintNFT() {
         // then continue to the next iteration of the loop. It doesn't block other operations.
         //await delay(60000); // 60000 ms = 60 seconds
         await delay(500); // delay for 500ms
-        //console.log("Waiting for the transaction to be completed....");
+        //logger.info("Waiting for the transaction to be completed....");
       }
     }
   } catch (err) {
-    console.error("Failed to fetch users:", err);
+    logger.error(`Failed to fetch users:  ${err}`);
   }
 }
 
@@ -150,7 +150,15 @@ async function mintNFT(user_address) {
     nft_mint_status,
     nft_transfer_status,
     coin_transfer_status;
-  let nft_mint_hash, nft_transfer_hash, coin_transfer_hash;
+  let nft_mint_hash,
+    nft_transfer_hash,
+    coin_transfer_hash,
+    nft_mint_nonce,
+    nft_transfer_nonce,
+    coin_transfer_nonce,
+    nft_mint_error,
+    nft_transfer_error,
+    coin_transfer_error;
 
   try {
     coin_reward = await getRewards(user_address);
@@ -164,11 +172,12 @@ async function mintNFT(user_address) {
     logger.info("Submitting mint transaction");
     const signedTxn = await wallet.sendTransaction(rawTxn);
     nft_mint_hash = signedTxn.hash;
+    nft_mint_nonce = signedTxn.nonce;
 
     const mintReceipt = await signedTxn.wait();
     nft_mint_status = mintReceipt.status ? "Success" : "Failed";
 
-    logger.debug(`signedTxn: ${JSON.stringify(signedTxn, null, 2)}`);
+    logger.debug(`NFT Mint signedTxn: ${JSON.stringify(signedTxn, null, 2)}`);
     logger.debug(`mintReceipt: ${JSON.stringify(mintReceipt, null, 2)}`);
     logger.debug(`NFT Mint Tnx Status: ${nft_mint_status}`);
     logger.info(`NFT Minted successfully! Transaction Hash: ${nft_mint_hash}`);
@@ -178,7 +187,12 @@ async function mintNFT(user_address) {
 
     logger.debug(`token_id: ${token_id}`);
 
-    [nft_transfer_status, nft_transfer_hash] = await transferNFT(
+    [
+      nft_transfer_status,
+      nft_transfer_hash,
+      nft_transfer_nonce,
+      nft_transfer_error,
+    ] = await transferNFT(
       privateKey,
       contractAddress,
       token_id,
@@ -189,7 +203,12 @@ async function mintNFT(user_address) {
       `NFT Transfered successfully! Transaction Hash: ${nft_transfer_hash}`
     );
 
-    [coin_transfer_status, coin_transfer_hash] = await transferTokens(
+    [
+      coin_transfer_status,
+      coin_transfer_hash,
+      coin_transfer_nonce,
+      coin_transfer_error,
+    ] = await transferTokens(
       tokenContractAddress,
       privateKey,
       user_address,
@@ -217,13 +236,20 @@ async function mintNFT(user_address) {
       coin_transfer_status,
       nft_mint_hash,
       nft_transfer_hash,
-      coin_transfer_hash
+      coin_transfer_hash,
+      nft_mint_nonce,
+      nft_transfer_nonce,
+      coin_transfer_nonce,
+      nft_mint_error,
+      nft_transfer_error,
+      coin_transfer_error
     );
     logger.info(
       `Minting and Coin Distribution Successful for wallet: ${recipient_wallet}`
     );
   } catch (e) {
     logger.error(`Error Caught in Minting: ${e}`);
+    nft_mint_error = e.toString();
     // insert error data
     await insertNFTData(
       recipient_wallet,
@@ -236,7 +262,12 @@ async function mintNFT(user_address) {
       nft_mint_hash,
       nft_transfer_hash,
       coin_transfer_hash,
-      e.toString()
+      nft_mint_nonce,
+      nft_transfer_nonce,
+      coin_transfer_nonce,
+      nft_mint_error,
+      nft_transfer_error,
+      coin_transfer_error
     );
   }
 }
