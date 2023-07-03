@@ -14,7 +14,8 @@ async function transferNFT(
   let nft_transfer_status = "";
   let nft_transfer_hash = "";
   let tx;
-  let nftTransferReceipt;
+  let nftTransferReceipt, nft_transfer_nonce, nft_transfer_error;
+
   try {
     // Create a new instance of ethers.Wallet with the private key
     // Connect the wallet to the Ethereum network
@@ -35,31 +36,35 @@ async function transferNFT(
 
     // Call the contract's `transferFrom` function
     tx = await contract.transferFrom(wallet.address, recipientAddress, tokenId);
-    logger.info("Test");
+    logger.debug(`NFT Transfer Tnx:  ${JSON.stringify(tx, null, 2)}`);
 
     // Get transaction hash
     nft_transfer_hash = tx.hash;
+    nft_transfer_nonce = tx.nonce;
 
-    try {
-      // Wait for the transaction to be mined
-      nftTransferReceipt = await tx.wait();
-      nft_transfer_status = nftTransferReceipt.status ? "Success" : "Failed";
-      logger.debug("NFT Transfer Tnx Status: " + nft_transfer_status);
-    } catch (error) {
-      logger.error("Error while waiting for transaction receipt: " + error);
-      nft_transfer_status = "Failed";
-    }
+    logger.debug(`nft_transfer_hash:  ${nft_transfer_hash}`);
+    logger.debug(`nft_transfer_nonce:  ${nft_transfer_nonce}`);
+
+    // Wait for the transaction to be mined
+    nftTransferReceipt = await tx.wait();
+    nft_transfer_status = nftTransferReceipt.status ? "Success" : "Failed";
+    logger.debug("NFT Transfer Tnx Status: " + nft_transfer_status);
+    logger.debug(
+      "nftTransferReceipt: " + JSON.stringify(nftTransferReceipt, null, 2)
+    );
   } catch (error) {
     logger.error("Error in Transferring NFT..." + error);
+    nft_transfer_error = error.toString();
     nft_transfer_status = "Failed";
   }
 
-  logger.debug(
-    "nftTransferReceipt: " + JSON.stringify(nftTransferReceipt, null, 2)
-  );
-
   // Return the transaction receipt
-  return [nft_transfer_status, nft_transfer_hash];
+  return [
+    nft_transfer_status,
+    nft_transfer_hash,
+    nft_transfer_nonce,
+    nft_transfer_error,
+  ];
 }
 
 module.exports = transferNFT;

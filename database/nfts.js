@@ -1,4 +1,5 @@
 const pool = require("./db");
+const logger = require("../logger");
 
 async function dropNftsTable() {
   const client = await pool.connect();
@@ -9,7 +10,7 @@ async function dropNftsTable() {
     const commit = await client.query("COMMIT");
   } catch (err) {
     await client.query("ROLLBACK");
-    console.error("Error dropping table:", err);
+    logger.error("Error dropping table:" + err);
   } finally {
     client.release();
   }
@@ -28,19 +29,22 @@ async function createNftsTable() {
                 token_uri VARCHAR(255),
                 token_id VARCHAR(255),
                 nft_mint_hash VARCHAR(255),
+                nft_mint_nonce DECIMAL(28,18),
                 nft_transfer_status VARCHAR(255),
                 nft_transfer_hash VARCHAR(255),
+                nft_transfer_nonce DECIMAL(28,18),
                 coin_transfer_status VARCHAR(255),
                 coin_transfer_hash VARCHAR(255),
+                coin_transfer_nonce DECIMAL(28,18),
                 nft_mint_error TEXT,
                 nft_transfer_error TEXT,
                 coin_transfer_error TEXT
             );
         `;
     await client.query(queryText);
-    console.log("Table nfts created successfully.");
+    logger.info("Table nfts created successfully.");
   } catch (err) {
-    console.error("Error creating nfts table:", err);
+    logger.error("Error creating nfts table:" + err);
   } finally {
     client.release();
   }
@@ -54,9 +58,9 @@ async function getNfts() {
             SELECT * FROM nfts;
         `;
     const res = await client.query(queryText);
-    console.log("Data retrieved successfully: ", res.rows);
+    logger.info("Data retrieved successfully: " + res.rows);
   } catch (err) {
-    console.error("Error retrieving data:", err);
+    logger.error("Error retrieving data:" + err);
   } finally {
     client.release();
   }
@@ -73,9 +77,9 @@ async function insertNftsTestData() {
                    ('0xCA22C6dF116eB6B14bFa6a8c80C43b0c1D3e3284', 'my_token_uri_3', 300, false, true, 'nft_hash_3', 'coin_hash_3');
         `;
     await client.query(queryText);
-    console.log("Test data inserted successfully.");
+    logger.info("Test data inserted successfully.");
   } catch (err) {
-    console.error("Error inserting test data:", err);
+    logger.error("Error inserting test data: " + err);
   } finally {
     client.release();
   }
@@ -92,6 +96,9 @@ async function insertNFTData(
   nft_mint_hash,
   nft_transfer_hash,
   coin_transfer_hash,
+  nft_mint_nonce,
+  nft_transfer_nonce,
+  coin_transfer_nonce,
   nft_mint_error,
   nft_transfer_error,
   coin_transfer_error
@@ -99,7 +106,7 @@ async function insertNFTData(
   const client = await pool.connect();
   try {
     const result = await client.query(
-      "INSERT INTO nfts (recipient_wallet,token_uri,token_id,coin_reward,nft_mint_status,nft_transfer_status, coin_transfer_status,nft_mint_hash,nft_transfer_hash,coin_transfer_hash,nft_mint_error,nft_transfer_error,coin_transfer_error) VALUES ($1, $2, $3, $4, $5, $6, $7,$8, $9, $10, $11,$12, $13)",
+      "INSERT INTO nfts (recipient_wallet,token_uri,token_id,coin_reward,nft_mint_status,nft_transfer_status, coin_transfer_status,nft_mint_hash,nft_transfer_hash,coin_transfer_hash, nft_mint_nonce, nft_transfer_nonce, coin_transfer_nonce, nft_mint_error, nft_transfer_error,coin_transfer_error) VALUES ($1, $2, $3, $4, $5, $6, $7,$8, $9, $10, $11, $12, $13, $14, $15, $16)",
       [
         recipient_wallet,
         token_uri,
@@ -111,6 +118,9 @@ async function insertNFTData(
         nft_mint_hash,
         nft_transfer_hash,
         coin_transfer_hash,
+        nft_mint_nonce,
+        nft_transfer_nonce,
+        coin_transfer_nonce,
         nft_mint_error,
         nft_transfer_error,
         coin_transfer_error,
@@ -118,7 +128,7 @@ async function insertNFTData(
     );
     // console.log(`NFT Inserted for: ${recipient_wallet}`);
   } catch (err) {
-    console.error(err.message);
+    console.error("Error in inserting data into nfts table: " + err.message);
   } finally {
     client.release();
   }
@@ -142,9 +152,9 @@ async function updateNFTData(
         recipient_wallet,
       ]
     );
-    console.log(`NFT Updated for: ${recipient_wallet}`);
+    logger.info(`NFT Updated for: ${recipient_wallet}`);
   } catch (err) {
-    console.error(err.message);
+    logger.error(err.message);
   } finally {
     client.release();
   }
@@ -166,7 +176,7 @@ async function getNftsByWallet(walletAddress) {
       throw new Error(`No user found with wallet address: ${walletAddress}`);
     }
   } catch (err) {
-    console.error(err.message);
+    logger.error(err.message);
   } finally {
     client.release();
   }
