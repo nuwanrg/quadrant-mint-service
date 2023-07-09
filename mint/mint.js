@@ -116,7 +116,7 @@ async function _mintNFT() {
       // reset the transfer_status to false before minting the next NFT
       transfer_status = false;
       logger.info(
-        `Minting and Distribution for wallet : ${user.wallet_address}`
+        `\n Minting and Distribution for wallet : ${user.wallet_address}`
       );
       await mintNFT(user.wallet_address, "METADATA_URL");
 
