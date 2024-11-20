@@ -6,7 +6,7 @@ QuadNFT is a powerful platform conceived to revolutionize the process of minting
 
 The operation of this system is as follows:
 
-User data, including the reward pool they belong to, is retrieved from a PostgreSQL database and processed through a main loop.
+### User data, including the reward pool they belong to, is retrieved from a PostgreSQL database and processed through a main loop.
 
 For each user, a customized reward amount is dynamically calculated at the time of minting based on specific reward criteria, ensuring a fair and adaptable distribution process.
 
