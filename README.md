@@ -6,7 +6,7 @@ QuadNFT is a powerful platform conceived to revolutionize the process of minting
 
 The operation of this system is as follows:
 
-### User data, including the reward pool they belong to, is retrieved from a PostgreSQL database and processed through a main loop.
+User data, including the reward pool they belong to, is retrieved from a PostgreSQL database and processed through a main loop.
 
 For each user, a customized reward amount is dynamically calculated at the time of minting based on specific reward criteria, ensuring a fair and adaptable distribution process.
 
@@ -23,3 +23,17 @@ Specialized RPC Provider Usage: The solution leverages two Ethereum RPC provider
 Complementing the system is an intuitive dashboard built with the Python Dash framework. This dashboard retrieves and visualizes data from the PostgreSQL database, providing a comprehensive overview of the QuadNFT distribution.
 
 The solution is architected around three distinct code repositories: the smart contracts implementation, the Lambda function, and the Dash dashboard, fostering modularity and maintainability.
+
+## Design & Architecture
+
+### High-level system architecture
+
+![alt text](image-1.png)
+
+### Component Diagram - Mint and Distribution Engine
+
+![alt text](image-2.png)
+
+### Sequence Diagram-Mint & Distribution
+
+![alt text](image-3.png)
